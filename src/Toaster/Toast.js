@@ -57,14 +57,9 @@ const ToasterContainer = styled.div`
 export default class Toast extends React.PureComponent {
   static propTypes = {
     /**
-     * The z-index of the toast.
-     */
-    zIndex: PropTypes.number,
-
-    /**
      * Duration of the toast.
      */
-    duration: PropTypes.number,
+    duration: PropTypes.number.isRequired,
 
     /**
      * Function called when the toast is all the way closed.
@@ -74,7 +69,7 @@ export default class Toast extends React.PureComponent {
     /**
      * The type of the alert.
      */
-    color: PropTypes.oneOf(['green', 'red']),
+    color: PropTypes.oneOf(['green', 'red', 'blue']).isRequired,
 
     /**
      * The title of the alert.
@@ -92,7 +87,12 @@ export default class Toast extends React.PureComponent {
     isShown: PropTypes.bool,
   }
 
-  static defaultProps = {}
+  static defaultProps = {
+    onRemove: null,
+    title: null,
+    children: null,
+    isShown: false,
+  }
 
   state = {
     isShown: true,
@@ -104,10 +104,11 @@ export default class Toast extends React.PureComponent {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.isShown !== this.props.isShown) {
+    const { isShown } = this.props
+    if (prevProps.isShown !== isShown) {
       // eslint-disable-next-line react/no-did-update-set-state
       this.setState({
-        isShown: this.props.isShown,
+        isShown,
       })
     }
   }
@@ -124,10 +125,12 @@ export default class Toast extends React.PureComponent {
   }
 
   startCloseTimer = () => {
-    if (this.props.duration) {
+    const { duration } = this.props
+
+    if (duration) {
       this.closeTimer = setTimeout(() => {
         this.close()
-      }, this.props.duration * 1000)
+      }, duration * 1000)
     }
   }
 
@@ -157,13 +160,16 @@ export default class Toast extends React.PureComponent {
   }
 
   render() {
+    const { isShown, height } = this.state
+    const { onRemove, zIndex, color, title, children } = this.props
+
     return (
       <Transition
         appear
         unmountOnExit
         timeout={ANIMATION_DURATION}
-        in={this.state.isShown}
-        onExited={this.props.onRemove}
+        in={isShown}
+        onExited={onRemove}
       >
         {state => (
           <ToasterContainer
@@ -171,20 +177,20 @@ export default class Toast extends React.PureComponent {
             onMouseEnter={this.handleMouseEnter}
             onMouseLeave={this.handleMouseLeave}
             style={{
-              height: this.state.height,
-              zIndex: this.props.zIndex,
-              marginBottom: this.state.isShown ? 0 : -this.state.height,
+              height,
+              zIndex,
+              marginBottom: isShown ? 0 : -height,
             }}
           >
             <div ref={this.onRef} style={{ padding: 8 }}>
               <Alert
                 hasIcon
-                color={this.props.color}
-                title={this.props.title}
+                color={color}
+                title={title}
                 onRemove={() => this.close()}
                 pointerEvents="all"
               >
-                {this.props.children}
+                {children}
               </Alert>
             </div>
           </ToasterContainer>

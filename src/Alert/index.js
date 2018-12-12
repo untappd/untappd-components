@@ -1,11 +1,10 @@
 import React from 'react'
-import styled, { css, keyframes } from 'styled-components'
+import styled, { css } from 'styled-components'
 import { themeGet } from 'styled-system'
 
 import { BaseBox } from '../Base'
-import { Box, Flex } from '../Grid'
+import { Flex } from '../Grid'
 import Icons from '../Icons'
-import CloseButton from '../CloseButton'
 import ListItem from '../ListItem'
 import { getSpace, getColor } from '../utils'
 

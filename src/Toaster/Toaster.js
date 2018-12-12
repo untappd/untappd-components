@@ -21,42 +21,37 @@ export default class Toaster {
     ReactDOM.render(
       <DefaultTheme>
         <ToastManager
-          bindNotify={this._bindNotify}
-          bindGetToasts={this._bindGetToasts}
-          bindCloseAll={this._bindCloseAll}
+          bindNotify={this.bindNotify}
+          bindGetToasts={this.bindGetToasts}
+          bindCloseAll={this.bindCloseAll}
         />
       </DefaultTheme>,
       container,
     )
   }
 
-  _bindNotify = handler => {
+  bindNotify = handler => {
     this.notifyHandler = handler
   }
 
-  _bindGetToasts = handler => {
+  bindGetToasts = handler => {
     this.getToastsHandler = handler
   }
 
-  _bindCloseAll = handler => {
+  bindCloseAll = handler => {
     this.closeAllHandler = handler
   }
 
   getToasts = () => this.getToastsHandler()
 
-  closeAll = () => {
-    return this.closeAllHandler()
-  }
+  closeAll = () => this.closeAllHandler()
 
-  green = (title, settings = {}) => {
-    return this.notifyHandler(title, { ...settings, color: 'green' })
-  }
+  green = (title, settings = {}) =>
+    this.notifyHandler(title, { ...settings, color: 'green' })
 
-  blue = (title, settings = {}) => {
-    return this.notifyHandler(title, { ...settings, color: 'blue' })
-  }
+  blue = (title, settings = {}) =>
+    this.notifyHandler(title, { ...settings, color: 'blue' })
 
-  red = (title, settings = {}) => {
-    return this.notifyHandler(title, { ...settings, color: 'red' })
-  }
+  red = (title, settings = {}) =>
+    this.notifyHandler(title, { ...settings, color: 'red' })
 }

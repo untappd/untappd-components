@@ -100,8 +100,7 @@ export default class ToastManager extends React.PureComponent {
    * It won't remove the toast until onExited triggers onRemove.
    */
   closeToast = id => {
-    this.setState(previousState => {
-      return {
+    this.setState(previousState => ({
         toasts: previousState.toasts.map(toast => {
           if (toast.id === id) {
             return {
@@ -111,8 +110,7 @@ export default class ToastManager extends React.PureComponent {
           }
           return toast
         }),
-      }
-    })
+      }))
   }
 
   removeToast = id => {

@@ -8,10 +8,6 @@ import { getColor } from '../utils'
 const StyledButton = styled(Button)`
   text-decoration: none;
 
-  &:hover {
-    color: ${getColor('darkBlue')};
-  }
-
   border: none;
   outline: none;
   background: transparent;
@@ -22,6 +18,7 @@ const StyledButton = styled(Button)`
   }
 
   &:hover {
+    color: ${getColor('darkBlue')};
     background: transparent;
 
     svg path {
