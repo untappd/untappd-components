@@ -13,7 +13,7 @@ yarn start
 ## Publishing New Version
 
 ```sh
-yarn publish
+npm publish
 ```
 
 ## Deploying Docs
