@@ -3,6 +3,8 @@ import { render } from 'react-dom'
 import ReactModal from 'react-modal'
 import styled from 'styled-components'
 
+import packageJSON from '../../package.json'
+
 import {
   theme,
   utils,
@@ -245,7 +247,9 @@ class Examples extends Component {
           <Alert color="blue" mb={3}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           </Alert>
+        </Example>
 
+        <Example title="Callouts">
           <Callout color="red">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua
@@ -641,6 +645,8 @@ class Examples extends Component {
             </Navbar>
           </Box>
         </Example>
+
+        <Text>{packageJSON.version}</Text>
       </>
     )
   }

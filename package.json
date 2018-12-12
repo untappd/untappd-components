@@ -9,7 +9,8 @@
     "build:docs": "webpack --config=webpack.config.production.js --mode production",
     "prepublish": "yarn build",
     "lint:css": "stylelint './src/**/*.js'",
-    "lint:js": "eslint ./src/**/"
+    "lint:js": "eslint ./src/**/",
+    "deploy": "yarn build:docs && cp CNAME ./docs && gh-pages -d docs"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.0",
@@ -30,6 +31,7 @@
     "eslint-plugin-import": "2.14.0",
     "eslint-plugin-jsx-a11y": "6.1.2",
     "eslint-plugin-react": "^7.9.1",
+    "gh-pages": "^2.0.1",
     "html-webpack-plugin": "^3.2.0",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
