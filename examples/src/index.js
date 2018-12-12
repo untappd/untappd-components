@@ -533,6 +533,7 @@ class Examples extends Component {
 
         <Example title="Modal">
           <Button
+            mr={2}
             type="white"
             onClick={() => {
               this.setState(({ isFlexibleModalOpen }) => ({
@@ -544,7 +545,6 @@ class Examples extends Component {
           </Button>
 
           <Modal
-            mr={2}
             title="Modal"
             isOpen={isFlexibleModalOpen}
             onRequestClose={() => {
