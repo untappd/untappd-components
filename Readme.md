@@ -1,22 +1,22 @@
-# Setup
+## Setup
 
 ```sh
 yarn install
 ```
 
-# Running
+## Running
 
 ```sh
 yarn start
 ```
 
-# Publishing New Version
+## Publishing New Version
 
 ```sh
 yarn publish
 ```
 
-# Deploying Docs
+## Deploying Docs
 
 Commit changes locally then run
 
