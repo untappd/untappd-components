@@ -534,14 +534,40 @@ class Examples extends Component {
         <Example title="Modal">
           <Button
             type="white"
+            onClick={() => {
+              this.setState(({ isFlexibleModalOpen }) => ({
+                isFlexibleModalOpen: !isFlexibleModalOpen,
+              }))
+            }}
+          >
+            Open Modal
+          </Button>
+
+          <Modal
             mr={2}
+            title="Modal"
+            isOpen={isFlexibleModalOpen}
+            onRequestClose={() => {
+              this.setState(({ isFlexibleModalOpen }) => ({
+                isFlexibleModalOpen: !isFlexibleModalOpen,
+              }))
+            }}
+          >
+            <Card.Content>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua
+            </Card.Content>
+          </Modal>
+
+          <Button
+            type="white"
             onClick={() => {
               this.setState(({ isModalOpen }) => ({
                 isModalOpen: !isModalOpen,
               }))
             }}
           >
-            Open Modal
+            Open Side Modal
           </Button>
 
           <SideModal
@@ -555,41 +581,6 @@ class Examples extends Component {
           >
             <Card.Content>A Modal</Card.Content>
           </SideModal>
-
-          <Button
-            type="white"
-            onClick={() => {
-              this.setState(({ isFlexibleModalOpen }) => ({
-                isFlexibleModalOpen: !isFlexibleModalOpen,
-              }))
-            }}
-          >
-            Open Flexible Modal
-          </Button>
-
-          <Modal
-            isOpen={isFlexibleModalOpen}
-            onRequestClose={() => {
-              this.setState(({ isFlexibleModalOpen }) => ({
-                isFlexibleModalOpen: !isFlexibleModalOpen,
-              }))
-            }}
-          >
-            <Card.Header>
-              <Heading>Card With Single Button</Heading>
-              <CloseButton
-                onClick={() => {
-                  this.setState(({ isFlexibleModalOpen }) => ({
-                    isFlexibleModalOpen: !isFlexibleModalOpen,
-                  }))
-                }}
-              />
-            </Card.Header>
-            <Card.Content>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua
-            </Card.Content>
-          </Modal>
         </Example>
 
         <Example title="Toaster">
