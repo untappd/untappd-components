@@ -1,0 +1,59 @@
+{
+  "name": "@untappd/components",
+  "version": "1.0.0-alpha.17",
+  "main": "build/index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "NODE_ENV=development webpack-dev-server --mode development",
+    "build": "babel src/ --out-dir build/ --env-name production --delete-dir-on-start",
+    "build:docs": "webpack --config=webpack.config.production.js --mode production",
+    "prepublish": "yarn build",
+    "lint:css": "stylelint './src/**/*.js'",
+    "lint:js": "eslint ./src/**/"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.0",
+    "@babel/core": "^7.2.0",
+    "@babel/plugin-proposal-class-properties": "^7.2.1",
+    "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.2.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.4",
+    "babel-plugin-inline-react-svg": "^1.0.1",
+    "babel-plugin-named-asset-import": "^0.2.3",
+    "babel-plugin-styled-components": "^1.9.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-jsx-a11y": "6.1.2",
+    "eslint-plugin-react": "^7.9.1",
+    "html-webpack-plugin": "^3.2.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "styled-components": "^4.1.2",
+    "stylelint": "^9.9.0",
+    "stylelint-config-recommended": "^2.1.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.5.1",
+    "webpack": "^4.27.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  },
+  "peerDependencies": {
+    "react": ">= 16.3.0",
+    "react-dom": ">= 16.3.0",
+    "styled-components": ">= 4.0"
+  },
+  "dependencies": {
+    "downshift": "^3.1.5",
+    "react-modal": "^3.6.1",
+    "react-select": "^2.1.2",
+    "react-tooltip": "^3.9.0",
+    "react-transition-group": "^2.5.1",
+    "styled-system": "^3.1.11"
+  }
+}
