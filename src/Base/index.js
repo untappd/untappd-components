@@ -71,6 +71,7 @@ const BaseBox = styled(Base)(
 
 const BaseButton = styled(Base).attrs({
   as: 'button',
+  type: 'button',
 })``
 
 const BaseLabel = styled(Base).attrs({
