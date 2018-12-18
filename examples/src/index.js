@@ -194,14 +194,15 @@ class Examples extends Component {
 
         <Example title="Colors">
           <Flex flexDirection="row" flexWrap="wrap">
-            {Object.keys(theme.colors).map(key =>
-              Array.isArray(theme.colors[key]) ? (
-                Object.keys(theme.colors[key]).map(k => (
-                  <Color key={k} color={theme.colors[key][k]} />
-                ))
-              ) : (
-                <Color key={key} color={key} />
-              ),
+            {Object.keys(theme.colors).map(
+              key =>
+                Array.isArray(theme.colors[key]) ? (
+                  Object.keys(theme.colors[key]).map(k => (
+                    <Color key={k} color={theme.colors[key][k]} />
+                  ))
+                ) : (
+                  <Color key={key} color={key} />
+                ),
             )}
           </Flex>
         </Example>
@@ -259,6 +260,9 @@ class Examples extends Component {
         <Example title="Inputs">
           <FormLabel htmlFor="text-input">Text Input</FormLabel>
           <TextInput id="text-input" value="<TextInput />" />
+          <br />
+
+          <TextInput disabled value="Disabled Text Input" />
           <br />
 
           <TextInput size="large" value="Large Input" />
