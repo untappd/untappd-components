@@ -27,6 +27,13 @@ const StyledTextInput = styled(BaseInput)`
     border: 1px solid ${getColor('grays.3')};
   }
 
+  &:disabled {
+    background-color: ${getColor('grays.2')};
+    border-color: ${getColor('grays.3')};
+    cursor: not-allowed;
+    opacity: 0.25;
+  }
+
   ${errorState};
 `
 
