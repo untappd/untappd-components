@@ -1,17 +1,12 @@
 import React from 'react'
 import ReactSelect from 'react-select'
-import styled from 'styled-components'
+import ReactAsyncSelect from 'react-select/lib/Async'
+import styled, { css } from 'styled-components'
 import { themeGet as t } from 'styled-system'
 
 import { getSpace, getColor } from '../utils'
 
-function Select({ className, ...props }) {
-  return (
-    <ReactSelect {...props} className={className} classNamePrefix="ut-select" />
-  )
-}
-
-export default styled(Select)`
+const sharedStyle = css`
   .ut-select__control {
     min-height: ${getSpace(7)};
   }
@@ -57,3 +52,29 @@ export default styled(Select)`
     }
   }
 `
+
+function BaseSelect({ className, ...props }) {
+  return (
+    <ReactSelect {...props} className={className} classNamePrefix="ut-select" />
+  )
+}
+
+function BaseAsyncSelect({ className, ...props }) {
+  return (
+    <ReactAsyncSelect
+      {...props}
+      className={className}
+      classNamePrefix="ut-select"
+    />
+  )
+}
+
+const Select = styled(BaseSelect)`
+  ${sharedStyle}
+`
+
+const AsyncSelect = styled(BaseAsyncSelect)`
+  ${sharedStyle}
+`
+
+export { Select, AsyncSelect }

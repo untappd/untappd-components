@@ -134,7 +134,6 @@ class Examples extends Component {
     } = this.state
 
     function handleAsyncInputChange(newValue) {
-      debugger
       const inputValue = newValue.replace(/\W/g, '')
       this.setState({
         asyncInputValue: inputValue,
