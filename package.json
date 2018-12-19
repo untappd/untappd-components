@@ -1,14 +1,12 @@
 {
   "name": "@untappd/components",
-  "version": "1.0.0-alpha.19",
+  "version": "1.0.0-alpha.20",
   "main": "build/index.js",
   "license": "MIT",
   "scripts": {
     "start": "NODE_ENV=development webpack-dev-server --mode development",
-    "build":
-      "babel src/ --out-dir build/ --env-name production --delete-dir-on-start",
-    "build:docs":
-      "webpack --config=webpack.config.production.js --mode production",
+    "build": "babel src/ --out-dir build/ --env-name production --delete-dir-on-start",
+    "build:docs": "webpack --config=webpack.config.production.js --mode production",
     "prepublish": "yarn build",
     "lint": "yarn lint:css && yarn lint:js",
     "lint:css": "stylelint './src/**/*.js'",
