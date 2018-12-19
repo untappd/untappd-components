@@ -3,8 +3,6 @@ import { render } from 'react-dom'
 import ReactModal from 'react-modal'
 import styled from 'styled-components'
 
-import packageJSON from '../../package.json'
-
 import {
   theme,
   utils,
@@ -38,7 +36,8 @@ import {
   TextInput,
   Toaster,
 } from '@untappd/components'
-import { string } from 'postcss-selector-parser'
+
+import packageJSON from '../../package.json'
 
 ReactModal.setAppElement('#root')
 
