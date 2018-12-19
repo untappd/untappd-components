@@ -33,10 +33,12 @@ import {
   Row,
   SearchInput,
   Select,
+  AsyncSelect,
   Text,
   TextInput,
   Toaster,
 } from '@untappd/components'
+import { string } from 'postcss-selector-parser'
 
 ReactModal.setAppElement('#root')
 
@@ -46,7 +48,6 @@ const ButtonExample = styled.div`
     ${utils.mb(2)};
   }
 `
-
 function Example({ children, title, className }) {
   return (
     <Box mb={8} className={className}>
@@ -84,6 +85,15 @@ const options = [
   { value: 'vanilla', label: 'Vanilla' },
 ]
 
+const asyncOptions = [
+  { value: 'amarillo', label: 'amarillo' },
+  { value: 'citra', label: 'citra' },
+  { value: 'cascade', label: 'cascade' },
+  { value: 'el dorado', label: 'el dorade' },
+  { value: 'mosaic', label: 'mosaic' },
+  { value: 'motueka', label: 'motueka' },
+]
+
 const ITEMS = [
   { id: 1, heading: 'Miller Lite', info: 'Miller Brewing Company' },
   { id: 2, heading: 'Guinness Draught', info: 'Guinness' },
@@ -91,17 +101,45 @@ const ITEMS = [
   { id: 4, heading: 'Neon God', info: 'New Anthem Beer Project' },
 ]
 
+const filterAsyncOptions = inputValue => {
+  if (inputValue) {
+    return asyncOptions.filter(i =>
+      i.label.toLowerCase().includes(inputValue.toLowerCase()),
+    )
+  }
+  return asyncOptions
+}
+
+const loadAsyncOptions = (inputValue, callback) => {
+  setTimeout(() => {
+    callback(filterAsyncOptions(inputValue))
+  }, 750)
+}
+
 class Examples extends Component {
   state = {
     isModalOpen: false,
     isFlexibleModalOpen: false,
     isLoading: false,
     items: ITEMS,
+    asyncInputValue: '',
   }
 
   render() {
-    const { isModalOpen, isFlexibleModalOpen, isLoading } = this.state
+    const {
+      isModalOpen,
+      isFlexibleModalOpen,
+      isLoading,
+      asyncInputValue,
+    } = this.state
 
+    function handleAsyncInputChange(newValue) {
+      debugger
+      const inputValue = newValue.replace(/\W/g, '')
+      this.setState({
+        asyncInputValue: inputValue,
+      })
+    }
     return (
       <>
         <Example title="Grid">
@@ -194,15 +232,14 @@ class Examples extends Component {
 
         <Example title="Colors">
           <Flex flexDirection="row" flexWrap="wrap">
-            {Object.keys(theme.colors).map(
-              key =>
-                Array.isArray(theme.colors[key]) ? (
-                  Object.keys(theme.colors[key]).map(k => (
-                    <Color key={k} color={theme.colors[key][k]} />
-                  ))
-                ) : (
-                  <Color key={key} color={key} />
-                ),
+            {Object.keys(theme.colors).map(key =>
+              Array.isArray(theme.colors[key]) ? (
+                Object.keys(theme.colors[key]).map(k => (
+                  <Color key={k} color={theme.colors[key][k]} />
+                ))
+              ) : (
+                <Color key={key} color={key} />
+              ),
             )}
           </Flex>
         </Example>
@@ -286,6 +323,13 @@ class Examples extends Component {
           <br />
           <FormLabel htmlFor="select-box">Select Box</FormLabel>
           <Select id="select-box" value={options[0]} options={options} />
+          <br />
+          <FormLabel htmlFor="select-box">Async Select Box</FormLabel>
+          <AsyncSelect
+            id="select-box"
+            loadOptions={loadAsyncOptions}
+            onInputChange={this.handleAsyncInputChange}
+          />
         </Example>
 
         <Example title="Headings">
