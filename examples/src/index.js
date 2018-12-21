@@ -121,7 +121,10 @@ class Examples extends Component {
     isFlexibleModalOpen: false,
     isLoading: false,
     items: ITEMS,
+
     asyncInputValue: '',
+
+    selectedOption: null,
   }
 
   render() {
@@ -129,6 +132,7 @@ class Examples extends Component {
       isModalOpen,
       isFlexibleModalOpen,
       isLoading,
+      selectedOption,
       asyncInputValue,
     } = this.state
 
@@ -138,6 +142,7 @@ class Examples extends Component {
         asyncInputValue: inputValue,
       })
     }
+
     return (
       <>
         <Example title="Grid">
@@ -319,15 +324,32 @@ class Examples extends Component {
           <FormLabel htmlFor="search-input">Search Input</FormLabel>
           <SearchInput id="search-input" value="A Search Term" />
           <br />
-          <FormLabel htmlFor="select-box">Select Box</FormLabel>
-          <Select id="select-box" value={options[0]} options={options} />
-          <br />
+
           <FormLabel htmlFor="select-box">Async Select Box</FormLabel>
           <AsyncSelect
+            isClearable
             id="select-box"
             loadOptions={loadAsyncOptions}
             onInputChange={this.handleAsyncInputChange}
           />
+          <br />
+
+          <FormLabel htmlFor="select-box">Select Box</FormLabel>
+          <Select
+            id="select-box"
+            value={selectedOption}
+            options={options}
+            onChange={value => {
+              this.setState({
+                selectedOption: value,
+              })
+            }}
+          />
+
+          <Text mt={1}>
+            See <Link href="https://react-select.com/">React Select</Link> for
+            documentation
+          </Text>
         </Example>
 
         <Example title="Headings">
