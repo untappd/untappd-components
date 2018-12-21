@@ -121,9 +121,7 @@ class Examples extends Component {
     isFlexibleModalOpen: false,
     isLoading: false,
     items: ITEMS,
-
     asyncInputValue: '',
-
     selectedOption: null,
   }
 
