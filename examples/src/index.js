@@ -32,6 +32,7 @@ import {
   SearchInput,
   Select,
   AsyncSelect,
+  Tabs,
   Text,
   TextInput,
   Toaster,
@@ -594,6 +595,53 @@ class Examples extends Component {
                 </ListItem>
               ))}
             </List>
+          </Card>
+        </Example>
+
+        <Example title="Tabs">
+          <Text mb={1}>
+            See{' '}
+            <Link href="http://reactcommunity.org/react-tabs/">React Tabs</Link>{' '}
+            for documentation
+          </Text>
+
+          <Card>
+            <Tabs>
+              <Tabs.TabList>
+                <Tabs.Tab>Upcoming Events</Tabs.Tab>
+                <Tabs.Tab>Events In Progress</Tabs.Tab>
+                <Tabs.Tab>Past Events</Tabs.Tab>
+              </Tabs.TabList>
+
+              <Tabs.TabPanel>
+                <List>
+                  {[...Array(3).keys()].map(key => (
+                    <ListItem key={key}>
+                      <ListItem.Content>
+                        <ListItem.Heading>
+                          Event Name {key + 1}
+                        </ListItem.Heading>
+                        <ListItem.Info>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit, sed do
+                        </ListItem.Info>
+                      </ListItem.Content>
+                    </ListItem>
+                  ))}
+                </List>
+              </Tabs.TabPanel>
+
+              <Tabs.TabPanel>
+                <Card.Content>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                </Card.Content>
+              </Tabs.TabPanel>
+
+              <Tabs.TabPanel>
+                <Card.Content>Content 3</Card.Content>
+              </Tabs.TabPanel>
+            </Tabs>
           </Card>
         </Example>
 
