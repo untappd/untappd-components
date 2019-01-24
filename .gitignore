@@ -3,6 +3,8 @@
 .env.local
 .env.*.local
 
+cypress/videos
+
 build
 dist
 docs

@@ -9,12 +9,9 @@ import {
   TabPanel as UnstyledTabPanel,
 } from 'react-tabs'
 
-import { getSpace, getColor } from '../utils'
+import { getSpace, getHeight, getColor, px } from '../utils'
 
-const Tabs = styled(UnstyledTabs)`
-  /*  border: 1px solid #e0e0e0;
-  background: white;*/
-`
+const Tabs = styled(UnstyledTabs)``
 
 const TabList = styled(UnstyledTabList)`
   display: flex;
@@ -31,21 +28,25 @@ const Tab = styled(UnstyledTab).attrs({
   selectedClassName: 'ut__selected',
   disabledClassName: 'ut__disabled',
 })`
+  ${px(7)};
+  color: ${getColor('grays.4')};
+  font-weight: ${themeGet('fontWeights.1')};
+  display: flex;
+  align-items: center;
   text-align: center;
   list-style: none;
   cursor: pointer;
-
-  padding: ${getSpace(4)} ${getSpace(8)};
+  min-height: ${getHeight(9)};
   border-bottom: ${borderBottomWidth} solid transparent;
-  margin-top: ${borderBottomWidth};
+  padding-top: ${borderBottomWidth};
 
   &.ut__selected {
-    font-weight: ${themeGet('fontWeights.1')};
+    color: ${getColor('black')};
     border-bottom: ${borderBottomWidth} solid ${getColor('brand')};
   }
 
   &.ut__disabled {
-    color: #e0e0e0;
+    color: ${getColor('grays.2')};
     cursor: not-allowed;
   }
 `
