@@ -13,7 +13,7 @@
     "lint:js": "eslint ./src/**/",
     "deploy": "yarn build:docs && cp CNAME ./docs && gh-pages -d docs",
     "test:cypress": "start-server-and-test start http://localhost:4000 cypress:ci",
-    "cypress:ci": "percy exec -- cypress run",
+    "cypress:ci": "cypress run",
     "cypress": "cypress open"
   },
   "devDependencies": {
