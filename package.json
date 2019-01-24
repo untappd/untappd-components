@@ -1,6 +1,6 @@
 {
   "name": "@untappd/components",
-  "version": "1.0.0-alpha.20",
+  "version": "1.0.0-alpha.21",
   "main": "build/index.js",
   "license": "MIT",
   "scripts": {
@@ -11,7 +11,10 @@
     "lint": "yarn lint:css && yarn lint:js",
     "lint:css": "stylelint './src/**/*.js'",
     "lint:js": "eslint ./src/**/",
-    "deploy": "yarn build:docs && cp CNAME ./docs && gh-pages -d docs"
+    "deploy": "yarn build:docs && cp CNAME ./docs && gh-pages -d docs",
+    "test:cypress": "start-server-and-test start http://localhost:4000 cypress:ci",
+    "cypress:ci": "percy exec -- cypress run",
+    "cypress": "cypress open"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.0",
@@ -20,12 +23,14 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
     "@babel/plugin-transform-modules-commonjs": "^7.2.0",
     "@babel/preset-react": "^7.0.0",
+    "@percy/cypress": "^0.2.3",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
     "babel-plugin-inline-react-svg": "^1.0.1",
     "babel-plugin-named-asset-import": "^0.2.3",
     "babel-plugin-styled-components": "^1.9.2",
     "babel-plugin-transform-class-properties": "^6.24.1",
+    "cypress": "^3.1.4",
     "eslint": "^5.9.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^3.3.0",
@@ -37,6 +42,7 @@
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
+    "start-server-and-test": "^1.7.11",
     "styled-components": "^4.1.2",
     "stylelint": "^9.9.0",
     "stylelint-config-recommended": "^2.1.0",
@@ -55,6 +61,7 @@
     "downshift": "^3.1.5",
     "react-modal": "^3.6.1",
     "react-select": "^2.1.2",
+    "react-tabs": "^3.0.0",
     "react-tooltip": "^3.9.0",
     "react-transition-group": "^2.5.1",
     "styled-system": "^3.1.11"

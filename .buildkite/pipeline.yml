@@ -1,3 +1,8 @@
 steps:
-  - name: ":eslint:"
-    command: "yarn lint"
+  - name: ':eslint:'
+    command: 'yarn lint'
+
+  - wait
+
+  - name: ':cypress:'
+    command: 'yarn test:cypress'

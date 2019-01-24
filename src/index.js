@@ -21,57 +21,12 @@ export { default as Navbar } from './Navbar'
 export { default as SearchInput } from './SearchInput'
 export { Select, AsyncSelect } from './Select'
 export { default as SideModal } from './SideModal'
+export { default as Tabs } from './Tabs'
 export { default as Text } from './Text'
 export { default as TextInput } from './TextInput'
 export { default as Toaster } from './Toaster'
+
 export { default as theme } from './theme'
 export { default as DefaultTheme } from './DefaultTheme'
 
 export { Flex, Box, Row, Column } from './Grid'
-
-// import Autocomplete from './Autocomplete'
-// import Button from './Button'
-// import Callout from './Callout'
-// import Card from './Card'
-// import FormLabel from './FormLabel'
-// import Heading from './Heading'
-// import HoverActions from './HoverActions'
-// import Icons from './Icons'
-// import Label from './Label'
-// import List from './List'
-// import ListItem from './ListItem'
-// import Modal from './Modal'
-// import Link from './Link'
-// import Navbar from './Navbar'
-// import SearchInput from './SearchInput'
-// import Select from './Select'
-// import Text from './Text'
-// import TextInput from './TextInput'
-// import { Flex, Box, Row, Column } from './Grid'
-//
-// export {
-//   utils,
-//   theme,
-//   Autocomplete,
-//   Box,
-//   Button,
-//   Callout,
-//   Card,
-//   Column,
-//   Flex,
-//   FormLabel,
-//   Heading,
-//   HoverActions,
-//   Icons,
-//   Label,
-//   List,
-//   ListItem,
-//   Modal,
-//   Navbar,
-//   Row,
-//   SearchInput,
-//   Select,
-//   Link,
-//   Text,
-//   TextInput,
-// }
