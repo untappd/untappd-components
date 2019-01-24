@@ -1,4 +1,5 @@
 {
   "baseUrl": "http://localhost:4000",
-  "reporter": "list"
+  "reporter": "list",
+  "video": false
 }
