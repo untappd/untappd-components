@@ -5,4 +5,4 @@ steps:
   - wait
 
   - name: ':cypress:'
-    command: 'yarn cypress:ci'
+    command: 'yarn test:cypress'
