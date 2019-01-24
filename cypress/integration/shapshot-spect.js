@@ -3,10 +3,4 @@ describe('Overall page of components', () => {
     cy.visit('/')
     cy.percySnapshot()
   })
-
-  it('Modal looks right', () => {
-    cy.visit('/')
-    cy.contains('Open Modal').click()
-    cy.percySnapshot()
-  })
 })
