@@ -2,5 +2,7 @@ steps:
   - name: ':eslint:'
     command: 'yarn lint'
 
+  - wait
+
   - name: ':cypress:'
     command: 'yarn cypress:ci'

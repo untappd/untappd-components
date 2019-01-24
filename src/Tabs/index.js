@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 import { themeGet } from 'styled-system'
 
@@ -9,7 +8,7 @@ import {
   TabPanel as UnstyledTabPanel,
 } from 'react-tabs'
 
-import { getSpace, getHeight, getColor, px } from '../utils'
+import { getHeight, getColor, px } from '../utils'
 
 const Tabs = styled(UnstyledTabs)``
 
