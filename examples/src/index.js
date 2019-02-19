@@ -391,6 +391,7 @@ class Examples extends Component {
           <Icons.Close />
           <Icons.CloseCircle />
           <Icons.Search />
+          <Icons.Trashcan />
         </Example>
 
         <Example title="Cards">
