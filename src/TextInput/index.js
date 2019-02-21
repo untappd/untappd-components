@@ -1,7 +1,8 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 
-import Base, { BaseInput } from '../Base'
+import { BaseInput } from '../Base'
+import InputError from '../InputError'
 import { getSpace, getColor } from '../utils'
 
 const errorState = ({ error }) =>
@@ -44,15 +45,6 @@ StyledTextInput.defaultProps = {
   backgroundColor: 'white',
   display: 'block',
   lineHeight: 0,
-}
-
-const InputError = styled(Base)``
-
-InputError.defaultProps = {
-  fontWeight: 1,
-  mt: 1,
-  fontSize: 1,
-  color: 'red',
 }
 
 function TextInput({ error, ...props }) {
