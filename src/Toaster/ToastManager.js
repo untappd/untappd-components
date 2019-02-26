@@ -101,16 +101,16 @@ export default class ToastManager extends React.PureComponent {
    */
   closeToast = id => {
     this.setState(previousState => ({
-        toasts: previousState.toasts.map(toast => {
-          if (toast.id === id) {
-            return {
-              ...toast,
-              isShown: false,
-            }
+      toasts: previousState.toasts.map(toast => {
+        if (toast.id === id) {
+          return {
+            ...toast,
+            isShown: false,
           }
-          return toast
-        }),
-      }))
+        }
+        return toast
+      }),
+    }))
   }
 
   removeToast = id => {
