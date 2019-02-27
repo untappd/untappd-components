@@ -22,10 +22,13 @@ export default {
   ],
   plugins: [
     external(),
+
     babel({
       exclude: 'node_modules/**',
     }),
+
     resolve(),
+
     commonjs({
       include: 'node_modules/**',
       namedExports: {
