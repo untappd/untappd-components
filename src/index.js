@@ -1,7 +1,6 @@
 import * as utils from './utils'
-import { version } from '../package.json'
 
-export { utils, version }
+export { utils }
 
 export { default as Autocomplete } from './Autocomplete'
 export { default as Alert } from './Alert'

@@ -36,8 +36,9 @@ import {
   Text,
   TextInput,
   Toaster,
-  version,
 } from '@untappd/components'
+
+import packageJSON from '../../package.json'
 
 ReactModal.setAppElement('#root')
 
@@ -755,7 +756,7 @@ class Examples extends Component {
           </Box>
         </Example>
 
-        <Text>{version}</Text>
+        <Text>{packageJSON.version}</Text>
       </>
     )
   }

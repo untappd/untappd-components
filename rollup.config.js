@@ -2,7 +2,6 @@ import babel from 'rollup-plugin-babel'
 import commonjs from 'rollup-plugin-commonjs'
 import external from 'rollup-plugin-peer-deps-external'
 import resolve from 'rollup-plugin-node-resolve'
-import json from 'rollup-plugin-json'
 
 import pkg from './package.json'
 
@@ -16,7 +15,7 @@ export default {
     },
     {
       file: pkg.module,
-      format: 'es',
+      format: 'esm',
       sourcemap: true,
     },
   ],
@@ -37,12 +36,6 @@ export default {
           'isValidElementType',
         ],
       },
-    }),
-
-    json({
-      include: 'package.json',
-      preferConst: true,
-      compact: true,
     }),
   ],
 }
