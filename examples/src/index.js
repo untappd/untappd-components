@@ -12,6 +12,7 @@ import {
   Button,
   Callout,
   Card,
+  Checkbox,
   CloseButton,
   Column,
   DefaultTheme,
@@ -294,6 +295,23 @@ class Examples extends Component {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua
           </Callout>
+        </Example>
+
+        <Example title="Checkbox">
+          <Box mb={4}>
+            <Checkbox>Uncontrolled Checkbox</Checkbox>
+          </Box>
+          <Box mb={4}>
+            <Checkbox checked>Already Checked</Checkbox>
+          </Box>
+          <Box mb={4}>
+            <Checkbox disabled>Disabled</Checkbox>
+          </Box>
+          <Box mb={4}>
+            <Checkbox disabled checked>
+              Disabled and Checked
+            </Checkbox>
+          </Box>
         </Example>
 
         <Example title="Inputs">
