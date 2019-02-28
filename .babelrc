@@ -1,11 +1,10 @@
 {
-  "presets": ["@babel/preset-react"],
+  "presets": [["@babel/preset-react", { "modules": false }]],
   "plugins": [
     "@babel/plugin-proposal-class-properties",
     "@babel/plugin-proposal-object-rest-spread",
     "babel-plugin-styled-components",
-    "inline-react-svg",
-    "@babel/plugin-transform-modules-commonjs"
+    "inline-react-svg"
   ],
   "env": {
     "production": {
@@ -13,7 +12,7 @@
         [
           "babel-plugin-styled-components",
           {
-            "displayName": false,
+            "displayName": true,
             "fileName": false,
             "minify": true,
             "pure": true

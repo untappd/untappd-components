@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { render } from 'react-dom'
+import ReactDOM from 'react-dom'
 import ReactModal from 'react-modal'
 import styled from 'styled-components'
 
@@ -298,30 +298,34 @@ class Examples extends Component {
 
         <Example title="Inputs">
           <FormLabel htmlFor="text-input">Text Input</FormLabel>
-          <TextInput id="text-input" value="<TextInput />" />
+          <TextInput id="text-input" defaultValue="<TextInput />" />
           <br />
 
-          <TextInput disabled value="Disabled Text Input" />
+          <TextInput disabled defaultValue="Disabled Text Input" />
           <br />
 
-          <TextInput size="large" value="Large Input" />
+          <TextInput size="large" defaultValue="Large Input" />
           <br />
 
           <FormLabel htmlFor="email-input">Email Input</FormLabel>
-          <TextInput id="email-input" value="cool@cool.com" type="email" />
+          <TextInput
+            id="email-input"
+            defaultValue="cool@cool.com"
+            type="email"
+          />
           <br />
 
           <FormLabel>Form Error</FormLabel>
           <TextInput
             id="email-input"
-            value="cool@cool.com"
+            defaultValue="cool@cool.com"
             type="email"
             error="Error validating something"
           />
           <br />
 
           <FormLabel htmlFor="search-input">Search Input</FormLabel>
-          <SearchInput id="search-input" value="A Search Term" />
+          <SearchInput id="search-input" defaultValue="A Search Term" />
           <br />
 
           <FormLabel htmlFor="select-box">Async Select Box</FormLabel>
@@ -758,7 +762,7 @@ class Examples extends Component {
   }
 }
 
-render(
+ReactDOM.render(
   <DefaultTheme>
     <Examples />
   </DefaultTheme>,
