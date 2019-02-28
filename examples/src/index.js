@@ -299,40 +299,6 @@ class Examples extends Component {
           </Callout>
         </Example>
 
-        <Example title="Checkbox">
-          <Box mb={4}>
-            <Checkbox
-              checked={isChecked}
-              onChange={({ target }) => {
-                this.setState({
-                  isChecked: target.checked,
-                })
-              }}
-            >
-              Controlled Checkbox
-            </Checkbox>
-          </Box>
-          <Box mb={4}>
-            <Checkbox
-              checked
-              controlProps={{
-                fontWeight: 0,
-                fontSize: 2,
-              }}
-            >
-              Already Checked
-            </Checkbox>
-          </Box>
-          <Box mb={4}>
-            <Checkbox disabled>Disabled</Checkbox>
-          </Box>
-          <Box mb={4}>
-            <Checkbox disabled checked>
-              Disabled and Checked
-            </Checkbox>
-          </Box>
-        </Example>
-
         <Example title="Inputs">
           <FormLabel htmlFor="text-input">Text Input</FormLabel>
           <TextInput id="text-input" defaultValue="<TextInput />" />
@@ -790,6 +756,40 @@ class Examples extends Component {
                 <Heading fontSize={2}>Right Content</Heading>
               </Navbar.Content>
             </Navbar>
+          </Box>
+        </Example>
+
+        <Example title="Checkbox">
+          <Box mb={4}>
+            <Checkbox
+              checked={isChecked}
+              onChange={({ target }) => {
+                this.setState({
+                  isChecked: target.checked,
+                })
+              }}
+            >
+              Controlled Checkbox
+            </Checkbox>
+          </Box>
+          <Box mb={4}>
+            <Checkbox
+              checked
+              controlProps={{
+                fontWeight: 0,
+                fontSize: 2,
+              }}
+            >
+              Already Checked
+            </Checkbox>
+          </Box>
+          <Box mb={4}>
+            <Checkbox disabled>Disabled</Checkbox>
+          </Box>
+          <Box mb={4}>
+            <Checkbox disabled checked>
+              Disabled and Checked
+            </Checkbox>
           </Box>
         </Example>
 
