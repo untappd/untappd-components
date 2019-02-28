@@ -88,11 +88,11 @@ const Input = styled(BaseInput).attrs({
   }
 `
 
-export default function Checkbox({ children, ...props }) {
+export default function Checkbox({ children, controlProps, ...props }) {
   const { disabled } = props
 
   return (
-    <Control disabled={disabled}>
+    <Control disabled={disabled} {...controlProps}>
       {children}
       <Input {...props} />
       <ControlIndicator />

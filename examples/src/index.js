@@ -122,6 +122,7 @@ class Examples extends Component {
     isModalOpen: false,
     isFlexibleModalOpen: false,
     isLoading: false,
+    isChecked: false,
     items: ITEMS,
     asyncInputValue: '',
     selectedOption: null,
@@ -134,6 +135,7 @@ class Examples extends Component {
       isLoading,
       selectedOption,
       asyncInputValue,
+      isChecked,
     } = this.state
 
     function handleAsyncInputChange(newValue) {
@@ -299,10 +301,27 @@ class Examples extends Component {
 
         <Example title="Checkbox">
           <Box mb={4}>
-            <Checkbox>Uncontrolled Checkbox</Checkbox>
+            <Checkbox
+              checked={isChecked}
+              onChange={({ target }) => {
+                this.setState({
+                  isChecked: target.checked,
+                })
+              }}
+            >
+              Controlled Checkbox
+            </Checkbox>
           </Box>
           <Box mb={4}>
-            <Checkbox checked>Already Checked</Checkbox>
+            <Checkbox
+              checked
+              controlProps={{
+                fontWeight: 0,
+                fontSize: 2,
+              }}
+            >
+              Already Checked
+            </Checkbox>
           </Box>
           <Box mb={4}>
             <Checkbox disabled>Disabled</Checkbox>
