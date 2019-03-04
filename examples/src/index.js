@@ -12,6 +12,7 @@ import {
   Button,
   Callout,
   Card,
+  Checkbox,
   CloseButton,
   Column,
   DefaultTheme,
@@ -121,6 +122,7 @@ class Examples extends Component {
     isModalOpen: false,
     isFlexibleModalOpen: false,
     isLoading: false,
+    isChecked: false,
     items: ITEMS,
     asyncInputValue: '',
     selectedOption: null,
@@ -133,6 +135,7 @@ class Examples extends Component {
       isLoading,
       selectedOption,
       asyncInputValue,
+      isChecked,
     } = this.state
 
     function handleAsyncInputChange(newValue) {
@@ -755,6 +758,40 @@ class Examples extends Component {
                 <Heading fontSize={2}>Right Content</Heading>
               </Navbar.Content>
             </Navbar>
+          </Box>
+        </Example>
+
+        <Example title="Checkbox">
+          <Box mb={4}>
+            <Checkbox
+              checked={isChecked}
+              onChange={({ target }) => {
+                this.setState({
+                  isChecked: target.checked,
+                })
+              }}
+            >
+              Controlled Checkbox
+            </Checkbox>
+          </Box>
+          <Box mb={4}>
+            <Checkbox
+              checked
+              controlProps={{
+                fontWeight: 0,
+                fontSize: 2,
+              }}
+            >
+              Already Checked
+            </Checkbox>
+          </Box>
+          <Box mb={4}>
+            <Checkbox disabled>Disabled</Checkbox>
+          </Box>
+          <Box mb={4}>
+            <Checkbox disabled checked>
+              Disabled and Checked
+            </Checkbox>
           </Box>
         </Example>
 
