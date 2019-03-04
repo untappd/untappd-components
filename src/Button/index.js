@@ -154,7 +154,6 @@ const ButtonIcon = styled.span`
 `
 
 const IconBefore = styled(ButtonIcon)(mr(2))
-const IconAfter = styled(ButtonIcon)(ml(2))
 
 function Button({ children, isLoading, iconBefore, iconAfter, ...props }) {
   const { href } = props
@@ -171,7 +170,6 @@ function Button({ children, isLoading, iconBefore, iconAfter, ...props }) {
         <>
           {iconBefore && <IconBefore>{iconBefore}</IconBefore>}
           {children}
-          {iconAfter && <IconAfter>{iconAfter}</IconAfter>}
         </>
       )}
     </StyledButton>

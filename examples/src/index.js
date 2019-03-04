@@ -201,8 +201,6 @@ class Examples extends Component {
                 API Call
               </Button>
               <Button iconBefore={<Icons.Close />}>Button Icon</Button>
-
-              <Button iconAfter={<Icons.Close />}>Button Icon After</Button>
             </Box>
             <Box mb={4}>
               <Button size="small">Small Button</Button>
