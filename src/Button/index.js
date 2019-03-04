@@ -2,7 +2,7 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 
 import { BaseButton } from '../Base'
-import { getColor, getFontSize, py, px, mr, ml } from '../utils'
+import { getColor, getFontSize, py, px, mr } from '../utils'
 import Spinner from './Spinner'
 
 const blue = css`
@@ -46,11 +46,24 @@ const white = css`
   }
 `
 
+const clear = css`
+  color: ${getColor('blue')};
+  background-color: transparent;
+  border-color: transparent;
+
+  &:hover {
+    color: ${getColor('darkBlue')};
+    border-color: transparent;
+    background-color: transparent;
+  }
+`
+
 const colors = {
   white,
   blue,
   red,
   green,
+  clear,
 }
 
 const sizes = {
@@ -92,7 +105,7 @@ const colorVariants = ({ color = 'white' }) => colors[color]
 
 const buttonReset = css`
   white-space: nowrap;
-  appearance: none;
+  appearance: none !important;
   max-width: 100%;
   vertical-align: middle;
   border: 1px solid transparent;
@@ -154,7 +167,6 @@ const ButtonIcon = styled.span`
 `
 
 const IconBefore = styled(ButtonIcon)(mr(2))
-const IconAfter = styled(ButtonIcon)(ml(2))
 
 function Button({ children, isLoading, iconBefore, iconAfter, ...props }) {
   const { href } = props
@@ -171,7 +183,6 @@ function Button({ children, isLoading, iconBefore, iconAfter, ...props }) {
         <>
           {iconBefore && <IconBefore>{iconBefore}</IconBefore>}
           {children}
-          {iconAfter && <IconAfter>{iconAfter}</IconAfter>}
         </>
       )}
     </StyledButton>
