@@ -48,6 +48,7 @@ const white = css`
 
 const clear = css`
   color: ${getColor('blue')};
+  background-color: transparent;
   border-color: transparent;
 
   &:hover {
