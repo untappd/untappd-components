@@ -51,10 +51,12 @@ const clear = css`
   background-color: transparent;
   border-color: transparent;
 
-  &:hover {
+  &:hover,
+  &:active {
     color: ${getColor('darkBlue')};
     border-color: transparent;
     background-color: transparent;
+    box-shadow: none;
   }
 `
 
@@ -115,6 +117,10 @@ const buttonReset = css`
 const StyledButton = styled(BaseButton)`
   color: ${getColor('white')};
 
+  &:active {
+    box-shadow: inset 0 1px 1px 0 rgba(0, 5, 5, 0.25);
+  }
+
   ${buttonReset};
   ${colorVariants};
   ${sizeVariants};
@@ -127,10 +133,6 @@ const StyledButton = styled(BaseButton)`
 
   &:focus {
     outline: none;
-  }
-
-  &:active {
-    box-shadow: inset 0 1px 1px 0 rgba(0, 5, 5, 0.25);
   }
 
   &:disabled {
