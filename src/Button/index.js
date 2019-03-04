@@ -2,7 +2,7 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 
 import { BaseButton } from '../Base'
-import { getColor, getFontSize, py, px, mr, ml } from '../utils'
+import { getColor, getFontSize, py, px, mr } from '../utils'
 import Spinner from './Spinner'
 
 const blue = css`
