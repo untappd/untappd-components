@@ -1,22 +1,24 @@
-workflow "Build and Publish" {
+workflow "Build, Test, and Publish" {
   on = "push"
   resolves = ["Publish"]
 }
 
-action "Filter" {
-  uses = "actions/bin/filter@master"
-  args = "branch master"
-}
-
 action "Build" {
-  needs = "Filter"
   uses = "actions/npm@master"
   args = "install"
 }
 
-action "Publish" {
+# Filter for master branch
+action "Master" {
   needs = "Build"
+  uses = "actions/bin/filter@master"
+  args = "branch master"
+}
+
+action "Publish" {
+  needs = "Master"
   uses = "actions/npm@master"
   args = "publish --access public"
   secrets = ["NPM_AUTH_TOKEN"]
 }
+
