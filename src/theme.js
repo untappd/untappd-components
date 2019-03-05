@@ -8,8 +8,8 @@ const brand = '#ffc000'
 const brandDark = '#ffb300'
 
 // Grays
-const gray100 = '#f8f8f8'
-const gray200 = '#f3f3f3'
+const gray100 = '#f3f3f3'
+const gray200 = '#e2e2e2'
 const gray300 = '#d8d8d8'
 const gray400 = '#898989'
 const gray500 = '#595959'

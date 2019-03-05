@@ -8,8 +8,6 @@ Card.defaultProps = {
   flex: 1,
   bg: 'white',
   boxShadow: 0,
-  border: '1px solid',
-  borderColor: 'grays.2',
   borderRadius: 0,
 }
 

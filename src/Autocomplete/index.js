@@ -19,7 +19,7 @@ const Items = withTheme(
           style: {
             backgroundColor:
               highlightedIndex === index
-                ? theme.colors.grays[1]
+                ? theme.colors.grays[0]
                 : theme.colors.white,
           },
         })}

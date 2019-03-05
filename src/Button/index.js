@@ -42,7 +42,7 @@ const white = css`
 
   &:hover {
     border-color: ${getColor('grays.2')};
-    background-color: ${getColor('grays.1')};
+    background-color: ${getColor('grays.0')};
   }
 `
 
