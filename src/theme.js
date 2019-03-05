@@ -8,8 +8,8 @@ const brand = '#ffc000'
 const brandDark = '#ffb300'
 
 // Grays
-const gray100 = '#f8f8f8'
-const gray200 = '#f3f3f3'
+const gray100 = '#f3f3f3'
+const gray200 = '#e2e2e2'
 const gray300 = '#d8d8d8'
 const gray400 = '#898989'
 const gray500 = '#595959'
@@ -49,7 +49,7 @@ const theme = {
   radii: [3],
 
   shadows: [
-    '0 1px 1px 0 rgba(0, 0, 0, 0.1)',
+    '0px 1px 6px rgba(0, 0, 0, 0.1)',
     '0 2px 16px 2px rgba(0, 0, 0, 0.1)',
     '0 5px 5px rgba(0, 0, 0, 0.1)',
   ],

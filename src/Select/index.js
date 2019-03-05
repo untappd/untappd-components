@@ -34,7 +34,7 @@ const sharedStyle = css`
   }
 
   .ut-select__option--is-focused {
-    background-color: ${t('colors.grays.1')};
+    background-color: ${t('colors.grays.0')};
 
     &:active {
       background-color: ${t('colors.grays.2')};
@@ -48,7 +48,7 @@ const sharedStyle = css`
     border-left: 2px solid ${getColor('blue')};
 
     &:hover {
-      background-color: ${t('colors.grays.1')};
+      background-color: ${t('colors.grays.0')};
     }
   }
 `
