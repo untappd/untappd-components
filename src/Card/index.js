@@ -1,13 +1,16 @@
 import styled from 'styled-components'
+import { themeGet } from 'styled-system'
 
 import { BaseBox } from '../Base'
 
-const Card = styled(BaseBox)``
+const Card = styled(BaseBox)`
+  box-shadow: ${({ stacked }) =>
+    stacked ? '0px 0px 16px rgba(0,0,0,0.1)' : themeGet('shadows.0')};
+`
 
 Card.defaultProps = {
   flex: 1,
   bg: 'white',
-  boxShadow: 0,
   borderRadius: 0,
 }
 

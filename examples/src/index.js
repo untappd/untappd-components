@@ -10,6 +10,7 @@ import {
   Autocomplete,
   Box,
   Button,
+  Breadcrumb,
   Callout,
   Card,
   CloseButton,
@@ -757,6 +758,15 @@ class Examples extends Component {
               </Navbar.Content>
             </Navbar>
           </Box>
+        </Example>
+
+        <Example title="Breadcrumb">
+          <Breadcrumb>
+            <Link href="/">&larr; A Cool Link</Link>
+          </Breadcrumb>
+          <Card stacked>
+            <Card.Content>Empty Card</Card.Content>
+          </Card>
         </Example>
 
         <Text>{packageJSON.version}</Text>

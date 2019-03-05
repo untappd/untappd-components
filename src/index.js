@@ -5,6 +5,7 @@ export { utils }
 export { default as Autocomplete } from './Autocomplete'
 export { default as Alert } from './Alert'
 export { default as Button } from './Button'
+export { default as Breadcrumb } from './Breadcrumb'
 export { default as Callout } from './Callout'
 export { default as Card } from './Card'
 export { default as CloseButton } from './CloseButton'
