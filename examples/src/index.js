@@ -13,7 +13,6 @@ import {
   Breadcrumb,
   Callout,
   Card,
-  CloseButton,
   Column,
   DefaultTheme,
   Flex,
@@ -21,6 +20,7 @@ import {
   Heading,
   HoverActions,
   Icons,
+  IconButton,
   Label,
   Link,
   List,
@@ -206,6 +206,9 @@ class Examples extends Component {
               <Button color="clear" iconBefore={<Icons.Close />}>
                 Clear Button Icon
               </Button>
+              <IconButton icon="Trashcan" />
+              <IconButton icon="Info" />
+              <IconButton icon="Alert" />
             </Box>
             <Box mb={4}>
               <Button size="small">Small Button</Button>
@@ -231,7 +234,6 @@ class Examples extends Component {
             <Button href="/" color="blue">
               A Cool Link
             </Button>
-            <CloseButton />
           </ButtonExample>
         </Example>
 

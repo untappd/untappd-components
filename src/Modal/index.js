@@ -3,7 +3,7 @@ import ReactModal from 'react-modal'
 import styled from 'styled-components'
 import { themeGet } from 'styled-system'
 
-import CloseButton from '../CloseButton'
+import IconButton from '../IconButton'
 import Card from '../Card'
 import Heading from '../Heading'
 import { getBreakpoint } from '../utils'
@@ -84,7 +84,7 @@ function Modal({ children, title, onRequestClose, ...props }) {
       <Card>
         <Card.Header>
           <Heading>{title}</Heading>
-          <CloseButton onClick={onRequestClose} />
+          <IconButton icon="Close" onClick={onRequestClose} />
         </Card.Header>
         {children}
       </Card>
