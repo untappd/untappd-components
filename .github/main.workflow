@@ -3,20 +3,20 @@ workflow "Build, Test, and Publish" {
   resolves = ["Publish"]
 }
 
-action "Build" {
-  uses = "actions/npm@master"
-  args = "install"
-}
-
 # Filter for master branch
 action "Master" {
-  needs = "Build"
   uses = "actions/bin/filter@master"
   args = "branch master"
 }
 
-action "Publish" {
+action "Build" {
+  uses = "actions/npm@master"
+  args = "install"
   needs = "Master"
+}
+
+action "Publish" {
+  needs = "Build"
   uses = "actions/npm@master"
   args = "publish --access public"
   secrets = ["NPM_AUTH_TOKEN"]
