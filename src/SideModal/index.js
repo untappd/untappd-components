@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { StyledModal } from '../Modal'
 import Card from '../Card'
 import Heading from '../Heading'
-import CloseButton from '../CloseButton'
+import IconButton from '../IconButton'
 import { getBreakpoint } from '../utils'
 
 const StyledSideModal = styled(StyledModal)`
@@ -52,7 +52,7 @@ export default function SideModal({
       <Card>
         <Card.Header>
           <Heading>{title}</Heading>
-          <CloseButton onClick={onRequestClose} />
+          <IconButton icon="Close" onClick={onRequestClose} />
         </Card.Header>
         {children}
       </Card>

@@ -27,10 +27,15 @@ const StyledButton = styled(Button)`
   }
 `
 
-export default function CloseButton({ iconStyle = {}, ...props }) {
+StyledButton.defaultProps = {
+  ...Button.defaultProps,
+}
+
+export default function IconButton({ icon = 'Info', ...props }) {
+  const IconComponent = Icons[icon]
   return (
     <StyledButton {...props}>
-      <Icons.CloseCircle style={iconStyle} />
+      <IconComponent />
     </StyledButton>
   )
 }
