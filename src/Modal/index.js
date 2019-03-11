@@ -54,7 +54,9 @@ export const StyledModal = styled(ReactModalAdapter)`
     left: 50%;
     position: fixed;
     right: auto;
-    top: 40%;
+    top: ${({ isVerticallyCentered }) =>
+      isVerticallyCentered ? '50%' : '40%'};
+
     box-shadow: ${themeGet('shadows.2')};
     background: ${themeGet('colors.white')};
     outline: none;
