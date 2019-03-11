@@ -49,6 +49,13 @@ const ButtonExample = styled.div`
     ${utils.mb(2)};
   }
 `
+
+const FixedList = styled(List)`
+  height: 425px;
+  width: 600px;
+  overflow-y: scroll;
+`
+
 function Example({ children, title, className }) {
   return (
     <Box mb={8} className={className}>
@@ -121,6 +128,7 @@ class Examples extends Component {
   state = {
     isModalOpen: false,
     isFlexibleModalOpen: false,
+    isFixedWidthModalOpen: false,
     isLoading: false,
     items: ITEMS,
     asyncInputValue: '',
@@ -131,6 +139,7 @@ class Examples extends Component {
     const {
       isModalOpen,
       isFlexibleModalOpen,
+      isFixedWidthModalOpen,
       isLoading,
       selectedOption,
       asyncInputValue,
@@ -682,6 +691,46 @@ class Examples extends Component {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua
             </Card.Content>
+          </Modal>
+
+          <Button
+            mr={2}
+            type="white"
+            onClick={() => {
+              this.setState(({ isFixedWidthModalOpen }) => ({
+                isFixedWidthModalOpen: !isFixedWidthModalOpen,
+              }))
+            }}
+          >
+            Open Fixed List Modal
+          </Button>
+
+          <Modal
+            title="Modal"
+            isVerticallyCentered
+            isOpen={isFixedWidthModalOpen}
+            onRequestClose={() => {
+              this.setState(({ isFixedWidthModalOpen }) => ({
+                isFixedWidthModalOpen: !isFixedWidthModalOpen,
+              }))
+            }}
+          >
+            <FixedList>
+              <List>
+                {[...Array(20).keys()].map(key => (
+                  <ListItem key={key}>
+                    <ListItem.Content>
+                      <ListItem.Heading>Event Name {key + 1}</ListItem.Heading>
+                      <ListItem.Info>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do
+                      </ListItem.Info>
+                    </ListItem.Content>
+                  </ListItem>
+                ))}
+              </List>
+            </FixedList>
+            <Card.Footer>This is a footer</Card.Footer>
           </Modal>
 
           <Button
