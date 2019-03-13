@@ -134,7 +134,8 @@ class Examples extends Component {
     items: ITEMS,
     asyncInputValue: '',
     selectedOption: null,
-    isChecked: false,
+    isToggle1Checked: false,
+    isToggle2Checked: true,
   }
 
   render() {
@@ -145,7 +146,8 @@ class Examples extends Component {
       isLoading,
       selectedOption,
       asyncInputValue,
-      isChecked
+      isToggle1Checked,
+      isToggle2Checked,
     } = this.state
 
     function handleAsyncInputChange(newValue) {
@@ -827,10 +829,10 @@ class Examples extends Component {
           <Toggle
             height={24}
             width={44}
-            checked={isChecked}
+            checked={isToggle1Checked}
             onChange={value => {
               this.setState({
-                isChecked: value,
+                isToggle1Checked: value,
               })
             }}
           />
@@ -838,10 +840,10 @@ class Examples extends Component {
           <Toggle
             height={24}
             width={44}
-            checked={!isChecked}
+            checked={isToggle2Checked}
             onChange={value => {
               this.setState({
-                isChecked: value,
+                isToggle2Checked: value,
               })
             }}
           />
