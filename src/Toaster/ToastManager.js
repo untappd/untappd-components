@@ -12,6 +12,7 @@ const Wrapper = styled.div({
   right: 0,
   position: 'fixed',
   zIndex: 5,
+  pointerEvents: 'none',
 })
 
 const hasCustomId = settings => Object.hasOwnProperty.call(settings, 'id')

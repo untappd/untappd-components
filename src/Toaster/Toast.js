@@ -188,7 +188,6 @@ export default class Toast extends React.PureComponent {
                 color={color}
                 title={title}
                 onRemove={() => this.close()}
-                pointerEvents="all"
               >
                 {children}
               </Alert>
