@@ -37,6 +37,7 @@ import {
   Text,
   TextInput,
   Toaster,
+  Toggle,
 } from '@untappd/components'
 
 import packageJSON from '../../package.json'
@@ -133,6 +134,8 @@ class Examples extends Component {
     items: ITEMS,
     asyncInputValue: '',
     selectedOption: null,
+    isToggle1Checked: false,
+    isToggle2Checked: true,
   }
 
   render() {
@@ -143,6 +146,8 @@ class Examples extends Component {
       isLoading,
       selectedOption,
       asyncInputValue,
+      isToggle1Checked,
+      isToggle2Checked,
     } = this.state
 
     function handleAsyncInputChange(newValue) {
@@ -818,6 +823,30 @@ class Examples extends Component {
           <Card stacked>
             <Card.Content>Empty Card</Card.Content>
           </Card>
+        </Example>
+
+        <Example title="Toggles">
+          <Toggle
+            height={24}
+            width={44}
+            checked={isToggle1Checked}
+            onChange={value => {
+              this.setState({
+                isToggle1Checked: value,
+              })
+            }}
+          />
+
+          <Toggle
+            height={24}
+            width={44}
+            checked={isToggle2Checked}
+            onChange={value => {
+              this.setState({
+                isToggle2Checked: value,
+              })
+            }}
+          />
         </Example>
 
         <Text>{packageJSON.version}</Text>
