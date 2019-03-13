@@ -7,7 +7,7 @@ import { getColor } from '../utils'
 const StyledToggle = styled(Base)`
   .active .react-switch-bg {
     box-sizing: border-box;
-    border 1px solid ${getColor('darkBlue')};
+    border: 1px solid ${getColor('darkBlue')};
     background: rgba(30, 145, 234, 0.14) !important;
   }
 
@@ -17,7 +17,7 @@ const StyledToggle = styled(Base)`
 
   .not-active .react-switch-bg {
     box-sizing: border-box;
-    border 1px solid ${getColor('grays.3')};
+    border: 1px solid ${getColor('grays.3')};
     background: ${getColor('grays.2')} !important;
   }
 
