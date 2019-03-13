@@ -246,18 +246,6 @@ class Examples extends Component {
             <Button href="/" color="blue">
               A Cool Link
             </Button>
-            <br />
-            <br />
-            <Toggle
-              height={24}
-              width={44}
-              checked={isChecked}
-              onChange={value => {
-                this.setState({
-                  isChecked: value,
-                })
-              }}
-            />
           </ButtonExample>
         </Example>
 
@@ -833,6 +821,30 @@ class Examples extends Component {
           <Card stacked>
             <Card.Content>Empty Card</Card.Content>
           </Card>
+        </Example>
+
+        <Example title="Toggles">
+          <Toggle
+            height={24}
+            width={44}
+            checked={isChecked}
+            onChange={value => {
+              this.setState({
+                isChecked: value,
+              })
+            }}
+          />
+
+          <Toggle
+            height={24}
+            width={44}
+            checked={!isChecked}
+            onChange={value => {
+              this.setState({
+                isChecked: value,
+              })
+            }}
+          />
         </Example>
 
         <Text>{packageJSON.version}</Text>
