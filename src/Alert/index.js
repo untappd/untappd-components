@@ -37,6 +37,7 @@ const StyledAlert = styled(BaseBox)`
   color: ${getColor('black')};
   background-color: ${getColor('white')};
   border-left-width: 3px;
+  pointer-events: all;
   ${colorVariants};
   ${listItemSpacing};
 
