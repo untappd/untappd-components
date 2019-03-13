@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { render } from 'react-dom'
+import ReactDOM from 'react-dom'
 import ReactModal from 'react-modal'
 import styled from 'styled-components'
 
@@ -10,9 +10,9 @@ import {
   Autocomplete,
   Box,
   Button,
+  Breadcrumb,
   Callout,
   Card,
-  CloseButton,
   Column,
   DefaultTheme,
   Flex,
@@ -20,6 +20,7 @@ import {
   Heading,
   HoverActions,
   Icons,
+  IconButton,
   Label,
   Link,
   List,
@@ -49,6 +50,13 @@ const ButtonExample = styled.div`
     ${utils.mb(2)};
   }
 `
+
+const FixedList = styled(List)`
+  height: 425px;
+  width: 600px;
+  overflow-y: scroll;
+`
+
 function Example({ children, title, className }) {
   return (
     <Box mb={8} className={className}>
@@ -121,6 +129,7 @@ class Examples extends Component {
   state = {
     isModalOpen: false,
     isFlexibleModalOpen: false,
+    isFixedWidthModalOpen: false,
     isLoading: false,
     items: ITEMS,
     asyncInputValue: '',
@@ -132,6 +141,7 @@ class Examples extends Component {
     const {
       isModalOpen,
       isFlexibleModalOpen,
+      isFixedWidthModalOpen,
       isLoading,
       selectedOption,
       asyncInputValue,
@@ -204,8 +214,13 @@ class Examples extends Component {
                 API Call
               </Button>
               <Button iconBefore={<Icons.Close />}>Button Icon</Button>
-
-              <Button iconAfter={<Icons.Close />}>Button Icon After</Button>
+              <Button color="clear">Clear Button</Button>
+              <Button color="clear" iconBefore={<Icons.Close />}>
+                Clear Button Icon
+              </Button>
+              <IconButton icon="Trashcan" />
+              <IconButton icon="Info" />
+              <IconButton icon="Alert" />
             </Box>
             <Box mb={4}>
               <Button size="small">Small Button</Button>
@@ -231,7 +246,6 @@ class Examples extends Component {
             <Button href="/" color="blue">
               A Cool Link
             </Button>
-            <CloseButton />
             <br />
             <br />
             <Toggle
@@ -313,30 +327,34 @@ class Examples extends Component {
 
         <Example title="Inputs">
           <FormLabel htmlFor="text-input">Text Input</FormLabel>
-          <TextInput id="text-input" value="<TextInput />" />
+          <TextInput id="text-input" defaultValue="<TextInput />" />
           <br />
 
-          <TextInput disabled value="Disabled Text Input" />
+          <TextInput disabled defaultValue="Disabled Text Input" />
           <br />
 
-          <TextInput size="large" value="Large Input" />
+          <TextInput size="large" defaultValue="Large Input" />
           <br />
 
           <FormLabel htmlFor="email-input">Email Input</FormLabel>
-          <TextInput id="email-input" value="cool@cool.com" type="email" />
+          <TextInput
+            id="email-input"
+            defaultValue="cool@cool.com"
+            type="email"
+          />
           <br />
 
           <FormLabel>Form Error</FormLabel>
           <TextInput
             id="email-input"
-            value="cool@cool.com"
+            defaultValue="cool@cool.com"
             type="email"
             error="Error validating something"
           />
           <br />
 
           <FormLabel htmlFor="search-input">Search Input</FormLabel>
-          <SearchInput id="search-input" value="A Search Term" />
+          <SearchInput id="search-input" defaultValue="A Search Term" />
           <br />
 
           <FormLabel htmlFor="select-box">Async Select Box</FormLabel>
@@ -407,6 +425,7 @@ class Examples extends Component {
           <Icons.CloseCircle />
           <Icons.Search />
           <Icons.Trashcan />
+          <Icons.Edit />
         </Example>
 
         <Example title="Cards">
@@ -690,6 +709,46 @@ class Examples extends Component {
           </Modal>
 
           <Button
+            mr={2}
+            type="white"
+            onClick={() => {
+              this.setState(({ isFixedWidthModalOpen }) => ({
+                isFixedWidthModalOpen: !isFixedWidthModalOpen,
+              }))
+            }}
+          >
+            Open Fixed List Modal
+          </Button>
+
+          <Modal
+            title="Modal"
+            isVerticallyCentered
+            isOpen={isFixedWidthModalOpen}
+            onRequestClose={() => {
+              this.setState(({ isFixedWidthModalOpen }) => ({
+                isFixedWidthModalOpen: !isFixedWidthModalOpen,
+              }))
+            }}
+          >
+            <FixedList>
+              <List>
+                {[...Array(20).keys()].map(key => (
+                  <ListItem key={key}>
+                    <ListItem.Content>
+                      <ListItem.Heading>Event Name {key + 1}</ListItem.Heading>
+                      <ListItem.Info>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do
+                      </ListItem.Info>
+                    </ListItem.Content>
+                  </ListItem>
+                ))}
+              </List>
+            </FixedList>
+            <Card.Footer>This is a footer</Card.Footer>
+          </Modal>
+
+          <Button
             type="white"
             onClick={() => {
               this.setState(({ isModalOpen }) => ({
@@ -767,13 +826,22 @@ class Examples extends Component {
           </Box>
         </Example>
 
+        <Example title="Breadcrumb">
+          <Breadcrumb>
+            <Link href="/">&larr; A Cool Link</Link>
+          </Breadcrumb>
+          <Card stacked>
+            <Card.Content>Empty Card</Card.Content>
+          </Card>
+        </Example>
+
         <Text>{packageJSON.version}</Text>
       </>
     )
   }
 }
 
-render(
+ReactDOM.render(
   <DefaultTheme>
     <Examples />
   </DefaultTheme>,

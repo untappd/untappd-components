@@ -6,6 +6,7 @@ import Alert from './alert.svg'
 import Checked from './checked.svg'
 import Info from './info.svg'
 import Trashcan from './trashcan.svg'
+import Edit from './edit.svg'
 
 export default {
   Close,
@@ -16,4 +17,5 @@ export default {
   Info,
   Alert,
   Trashcan,
+  Edit,
 }

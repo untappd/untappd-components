@@ -2,7 +2,7 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 
 import { BaseButton } from '../Base'
-import { getColor, getFontSize, py, px, mr, ml } from '../utils'
+import { getColor, getFontSize, py, px, mr } from '../utils'
 import Spinner from './Spinner'
 
 const blue = css`
@@ -42,7 +42,21 @@ const white = css`
 
   &:hover {
     border-color: ${getColor('grays.2')};
-    background-color: ${getColor('grays.1')};
+    background-color: ${getColor('grays.0')};
+  }
+`
+
+const clear = css`
+  color: ${getColor('blue')};
+  background-color: transparent;
+  border-color: transparent;
+
+  &:hover,
+  &:active {
+    color: ${getColor('darkBlue')};
+    border-color: transparent;
+    background-color: transparent;
+    box-shadow: none;
   }
 `
 
@@ -51,6 +65,7 @@ const colors = {
   blue,
   red,
   green,
+  clear,
 }
 
 const sizes = {
@@ -92,7 +107,7 @@ const colorVariants = ({ color = 'white' }) => colors[color]
 
 const buttonReset = css`
   white-space: nowrap;
-  appearance: none;
+  appearance: none !important;
   max-width: 100%;
   vertical-align: middle;
   border: 1px solid transparent;
@@ -101,6 +116,10 @@ const buttonReset = css`
 
 const StyledButton = styled(BaseButton)`
   color: ${getColor('white')};
+
+  &:active {
+    box-shadow: inset 0 1px 1px 0 rgba(0, 5, 5, 0.25);
+  }
 
   ${buttonReset};
   ${colorVariants};
@@ -114,10 +133,6 @@ const StyledButton = styled(BaseButton)`
 
   &:focus {
     outline: none;
-  }
-
-  &:active {
-    box-shadow: inset 0 1px 1px 0 rgba(0, 5, 5, 0.25);
   }
 
   &:disabled {
@@ -154,7 +169,6 @@ const ButtonIcon = styled.span`
 `
 
 const IconBefore = styled(ButtonIcon)(mr(2))
-const IconAfter = styled(ButtonIcon)(ml(2))
 
 function Button({ children, isLoading, iconBefore, iconAfter, ...props }) {
   const { href } = props
@@ -171,7 +185,6 @@ function Button({ children, isLoading, iconBefore, iconAfter, ...props }) {
         <>
           {iconBefore && <IconBefore>{iconBefore}</IconBefore>}
           {children}
-          {iconAfter && <IconAfter>{iconAfter}</IconAfter>}
         </>
       )}
     </StyledButton>

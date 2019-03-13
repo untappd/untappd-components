@@ -6,7 +6,7 @@ import ListItem from '../ListItem'
 
 const List = styled(Base)`
   ${ListItem}:not(:first-child) {
-    border-top: 1px solid ${getColor('grays.2')};
+    border-top: 1px solid ${getColor('grays.1')};
   }
 `
 

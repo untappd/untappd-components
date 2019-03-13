@@ -70,7 +70,7 @@ const AlertButton = styled.div`
   border-radius: ${themeGet('radii.0')}px;
 
   &:hover {
-    background-color: ${getColor('grays.1')};
+    background-color: ${getColor('grays.0')};
   }
 `
 

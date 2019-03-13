@@ -3,7 +3,7 @@ import ReactModal from 'react-modal'
 import styled from 'styled-components'
 import { themeGet } from 'styled-system'
 
-import CloseButton from '../CloseButton'
+import IconButton from '../IconButton'
 import Card from '../Card'
 import Heading from '../Heading'
 import { getBreakpoint } from '../utils'
@@ -54,7 +54,9 @@ export const StyledModal = styled(ReactModalAdapter)`
     left: 50%;
     position: fixed;
     right: auto;
-    top: 40%;
+    top: ${({ isVerticallyCentered }) =>
+      isVerticallyCentered ? '50%' : '40%'};
+
     box-shadow: ${themeGet('shadows.2')};
     background: ${themeGet('colors.white')};
     outline: none;
@@ -84,7 +86,7 @@ function Modal({ children, title, onRequestClose, ...props }) {
       <Card>
         <Card.Header>
           <Heading>{title}</Heading>
-          <CloseButton onClick={onRequestClose} />
+          <IconButton icon="Close" onClick={onRequestClose} />
         </Card.Header>
         {children}
       </Card>
