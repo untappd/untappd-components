@@ -417,6 +417,7 @@ class Examples extends Component {
           <Icons.Trashcan />
           <Icons.Edit />
           <Icons.Print />
+          <Icons.Export />
         </Example>
 
         <Example title="Cards">

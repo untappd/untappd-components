@@ -8,6 +8,7 @@ import Info from './info.svg'
 import Trashcan from './trashcan.svg'
 import Edit from './edit.svg'
 import Print from './print.svg'
+import Export from './export.svg'
 
 export default {
   Close,
@@ -20,4 +21,5 @@ export default {
   Trashcan,
   Edit,
   Print,
+  Export,
 }
