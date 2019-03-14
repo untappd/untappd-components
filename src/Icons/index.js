@@ -7,6 +7,7 @@ import Checked from './checked.svg'
 import Info from './info.svg'
 import Trashcan from './trashcan.svg'
 import Edit from './edit.svg'
+import Print from './print.svg'
 
 export default {
   Close,
@@ -18,4 +19,5 @@ export default {
   Alert,
   Trashcan,
   Edit,
+  Print,
 }
