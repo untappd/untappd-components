@@ -6,16 +6,15 @@ import HoverActions from '../HoverActions'
 const hover = css`
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.05);
   cursor: pointer;
-
-  & ${HoverActions} {
-    display: block;
-  }
 `
 
 const ListItem = styled(BaseBox)`
   transition: box-shadow 0.1s;
 
   &:hover {
+    & ${HoverActions} {
+      display: block;
+    }
     ${({ onClick }) => typeof onClick !== 'undefined' && hover};
   }
 `
