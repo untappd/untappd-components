@@ -86,8 +86,6 @@ const Wrapper = styled(Flex)``
 Wrapper.defaultProps = {
   display: 'flex',
   justifyContent: 'space-between',
-  py: 4,
-  px: 5,
 }
 
 const IconContainer = styled(Flex)``
@@ -106,16 +104,18 @@ export default function Alert({
     blue: <Icons.Info />,
   }
 
+  const iconPadding = hasIcon ? '12px' : '24px'
+
   return (
     <StyledAlert color={color} {...props}>
       <Wrapper>
         {hasIcon && (
-          <IconContainer pr={3} ml={-2}>
+          <IconContainer py={4} pl={5} ml={-2}>
             {icon[color]}
           </IconContainer>
         )}
 
-        <ListItem.Content alignSelf="flex-start">
+        <ListItem.Content paddingLeft={iconPadding} alignSelf="flex-start">
           {title && <ListItem.Heading>{title}</ListItem.Heading>}
           {children && <ListItem.Info pt={0}>{children}</ListItem.Info>}
         </ListItem.Content>
