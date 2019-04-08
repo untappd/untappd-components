@@ -79,10 +79,10 @@ const Link = styled(BaseBox)`
 
 Link.defaultProps = {
   alignItems: 'center',
+  alignSelf: 'stretch',
   borderColor: 'grays.2',
   borderLeft: '1px solid',
   display: 'flex',
-  height: '100%',
   justifyContent: 'center',
   px,
   py,
