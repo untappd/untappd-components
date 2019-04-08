@@ -105,7 +105,7 @@ export default function Alert({
   }
 
   const iconPadding = hasIcon ? '12px' : '24px'
-  const closeIconPadding = hasIcon ? '0' : '24px'
+  const closeIconPadding = onRemove ? '0' : '24px'
 
   return (
     <StyledAlert color={color} {...props}>
