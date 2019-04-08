@@ -58,6 +58,14 @@ Left.defaultProps = {
   justifyContent: 'center',
 }
 
+const Column = styled(BaseBox)``
+
+Column.defaultProps = {
+  display: 'inline-block',
+  alignItems: 'center',
+  justifyContent: 'center',
+}
+
 const Content = styled(BaseBox)``
 
 Content.defaultProps = {
@@ -81,5 +89,6 @@ ListItem.Content = Content
 ListItem.Actions = Actions
 ListItem.Right = Right
 ListItem.Left = Left
+ListItem.Column = Column
 
 export default ListItem
