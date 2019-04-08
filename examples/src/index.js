@@ -611,6 +611,32 @@ class Examples extends Component {
           </ListItem>
         </Example>
 
+        {/* You can use 'href' or React Router's 'to' to pass into ListItem.Content and ListItem.Link */}
+        <Example title="Linked List Item">
+          <Card>
+            <List display="flex">
+              <ListItem>
+                <ListItem.Content as="a" href="/">
+                  <ListItem.Heading>Event Name</ListItem.Heading>
+                  <ListItem.Info>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do
+                  </ListItem.Info>
+                </ListItem.Content>
+
+                <ListItem.Actions>
+                  <HoverActions>
+                    <Button type="white">Edit</Button>
+                  </HoverActions>
+                </ListItem.Actions>
+                <ListItem.Link ml={3} as="a" href="/">
+                  <Icons.Disclosure />
+                </ListItem.Link>
+              </ListItem>
+            </List>
+          </Card>
+        </Example>
+
         <Example title="Non-Hover List with No Arrow">
           <Card>
             <List>
