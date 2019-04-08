@@ -625,6 +625,31 @@ class Examples extends Component {
           </Card>
         </Example>
 
+        <Example title="Non-Hover List with No Arrow and many columns">
+          <Card>
+            <List>
+              {[...Array(5).keys()].map(key => (
+                <ListItem key={key}>
+                  <ListItem.Content>
+                    <ListItem.Item width={1 / 4} pr={2}>
+                      <ListItem.Heading>Event Name {key + 1}</ListItem.Heading>
+                    </ListItem.Item>
+                    <ListItem.Item width={1 / 4} pr={2}>
+                      <ListItem.Heading>Event Name {key + 1}</ListItem.Heading>
+                    </ListItem.Item>
+                    <ListItem.Item width={1 / 4} pr={2}>
+                      <ListItem.Heading>Event Name {key + 1}</ListItem.Heading>
+                    </ListItem.Item>
+                    <ListItem.Item width={1 / 4} pr={2}>
+                      <ListItem.Heading>Event Name {key + 1}</ListItem.Heading>
+                    </ListItem.Item>
+                  </ListItem.Content>
+                </ListItem>
+              ))}
+            </List>
+          </Card>
+        </Example>
+
         <Example title="Tabs">
           <Text mb={1}>
             See{' '}
