@@ -121,7 +121,7 @@ export default function Alert({
         </ListItem.Content>
 
         {onRemove && (
-          <IconContainer pl={3} mr={-2}>
+          <IconContainer py={4} pr={5} pl={3} mr={-2}>
             <AlertButton onClick={onRemove}>
               <Icons.Close style={{ height: 18, width: 18 }} />
             </AlertButton>
