@@ -105,6 +105,7 @@ export default function Alert({
   }
 
   const iconPadding = hasIcon ? '12px' : '24px'
+  const closeIconPadding = hasIcon ? '0' : '24px'
 
   return (
     <StyledAlert color={color} {...props}>
@@ -115,7 +116,11 @@ export default function Alert({
           </IconContainer>
         )}
 
-        <ListItem.Content paddingLeft={iconPadding} alignSelf="flex-start">
+        <ListItem.Content
+          paddingLeft={iconPadding}
+          paddingRight={closeIconPadding}
+          alignSelf="flex-start"
+        >
           {title && <ListItem.Heading>{title}</ListItem.Heading>}
           {children && <ListItem.Info pt={0}>{children}</ListItem.Info>}
         </ListItem.Content>
