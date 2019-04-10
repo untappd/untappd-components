@@ -74,7 +74,6 @@ const Link = styled(BaseBox)`
   align-self: stretch;
   border-left: 1px solid ${getColor('grays.2')};
   display: flex;
-  justify-content: center;
   padding-bottom: ${getSpace(4)};
   padding-left: ${getSpace(5)};
   padding-right: ${getSpace(5)};
