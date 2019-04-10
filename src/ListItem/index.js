@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 
 import { BaseBox } from '../Base'
 import HoverActions from '../HoverActions'
-import { getColor } from '../utils'
+import { getColor, getSpace } from '../utils'
 
 const hover = css`
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.05);
@@ -67,26 +67,23 @@ const Column = styled(BaseBox)``
 
 Column.defaultProps = {
   display: 'inline-block',
-  alignItems: 'center',
-  justifyContent: 'center',
 }
 
 const Link = styled(BaseBox)`
+  align-items: center;
+  align-self: stretch;
+  border-left: 1px solid ${getColor('grays.2')};
+  display: flex;
+  justify-content: center;
+  padding-bottom: ${getSpace(4)};
+  padding-left: ${getSpace(5)};
+  padding-right: ${getSpace(5)};
+  padding-top: ${getSpace(4)};
+
   &:hover {
     background-color: ${getColor('grays.0')};
   }
 `
-
-Link.defaultProps = {
-  alignItems: 'center',
-  alignSelf: 'stretch',
-  borderColor: 'grays.2',
-  borderLeft: '1px solid',
-  display: 'flex',
-  justifyContent: 'center',
-  px,
-  py,
-}
 
 const Content = styled(BaseBox)`
   ${({ href, to }) =>
