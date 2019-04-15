@@ -905,15 +905,21 @@ class Examples extends Component {
 
         <Example title="Tooltips">
           <Flex>
-            <Box mr={5}>
+            <Box width={1 / 3}>
               <Tooltip content="Hello World">
-                <span>Text Content</span>
+                <span>Plain Text Example</span>
               </Tooltip>
             </Box>
 
-            <Box>
+            <Box width={1 / 3}>
+              <Tooltip content={<Box>Hello World</Box>}>
+                <span>Styled Text Example</span>
+              </Tooltip>
+            </Box>
+
+            <Box width={1 / 3}>
               <Tooltip content={<Icons.Alert />}>
-                <span>Component Content</span>
+                <span>Component Example</span>
               </Tooltip>
             </Box>
           </Flex>
