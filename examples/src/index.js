@@ -58,9 +58,9 @@ const FixedList = styled(List)`
   overflow-y: scroll;
 `
 
-function Example({ children, title, className }) {
+function Example({ children, title, className, ...props }) {
   return (
-    <Box mb={8} className={className}>
+    <Box mb={8} className={className} {...props}>
       <Heading fontSize={5} mb={5}>
         {title}
       </Heading>
@@ -903,7 +903,7 @@ class Examples extends Component {
           />
         </Example>
 
-        <Example title="Tooltips">
+        <Example title="Tooltips" data-cy="tooltip-example">
           <Flex>
             <Box width={1 / 3}>
               <Tooltip content="Hello World">
