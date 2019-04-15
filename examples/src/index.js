@@ -38,6 +38,7 @@ import {
   TextInput,
   Toaster,
   Toggle,
+  Tooltip,
 } from '@untappd/components'
 
 import packageJSON from '../../package.json'
@@ -900,6 +901,22 @@ class Examples extends Component {
               })
             }}
           />
+        </Example>
+
+        <Example title="Tooltips">
+          <Flex>
+            <Box mr={5}>
+              <Tooltip content="Hello World">
+                <span>Text Content</span>
+              </Tooltip>
+            </Box>
+
+            <Box>
+              <Tooltip content={<Icons.Alert />}>
+                <span>Component Content</span>
+              </Tooltip>
+            </Box>
+          </Flex>
         </Example>
 
         <Text>{packageJSON.version}</Text>

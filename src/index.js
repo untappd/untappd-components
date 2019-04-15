@@ -28,6 +28,7 @@ export { default as Text } from './Text'
 export { default as TextInput } from './TextInput'
 export { default as Toaster } from './Toaster'
 export { default as Toggle } from './Toggle'
+export { default as Tooltip } from './Tooltip'
 
 export { default as theme } from './theme'
 export { default as DefaultTheme } from './DefaultTheme'
