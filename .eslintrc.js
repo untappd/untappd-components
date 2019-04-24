@@ -27,4 +27,8 @@ module.exports = {
     jest: true,
     es6: true,
   },
+  globals: {
+    cy: true,
+    Cypress: true,
+  },
 }

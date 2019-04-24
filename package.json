@@ -1,6 +1,6 @@
 {
   "name": "@untappd/components",
-  "version": "1.0.0-beta.18",
+  "version": "1.0.0",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "license": "MIT",
@@ -63,6 +63,7 @@
     "styled-components": ">= 4.0"
   },
   "dependencies": {
+    "@tippy.js/react": "^2.1.2",
     "downshift": "^3.2.6",
     "react-modal": "^3.8.1",
     "react-select": "^2.4.1",
