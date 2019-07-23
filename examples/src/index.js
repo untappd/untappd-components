@@ -414,6 +414,7 @@ class Examples extends Component {
           <Icons.Disclosure />
           <Icons.Close />
           <Icons.CloseCircle />
+          <Icons.Notes />
           <Icons.Search />
           <Icons.Trashcan />
           <Icons.Edit />
