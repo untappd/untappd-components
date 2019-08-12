@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import {
-  themeGet,
+  compose,
   flexDirection,
   display,
   flex,
@@ -26,18 +26,12 @@ import {
   minHeight,
   boxShadow,
 } from 'styled-system'
+import { themeGet } from '@styled-system/theme-get'
 
 import zIndex from '../zIndex'
 import { getColor } from '../utils'
 
-const Base = styled.div(
-  props => ({
-    color: getColor('black')(props),
-    fontFamily: themeGet('fonts.default')(props),
-    boxSizing: 'border-box',
-    margin: 0,
-    padding: 0,
-  }),
+const styleProps = compose(
   color,
   fontSize,
   fontWeight,
@@ -52,6 +46,17 @@ const Base = styled.div(
   height,
   minHeight,
   zIndex,
+)
+
+const Base = styled.div(
+  props => ({
+    color: getColor('black')(props),
+    fontFamily: themeGet('fonts.default')(props),
+    boxSizing: 'border-box',
+    margin: 0,
+    padding: 0,
+  }),
+  styleProps,
   props => props.css,
 )
 

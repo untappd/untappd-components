@@ -63,6 +63,7 @@
     "styled-components": ">= 4.0"
   },
   "dependencies": {
+    "@styled-system/theme-get": "^5.0.21",
     "@tippy.js/react": "^2.1.2",
     "downshift": "^3.2.6",
     "react-modal": "^3.8.1",
@@ -71,6 +72,6 @@
     "react-tabs": "^3.0.0",
     "react-tooltip": "^3.9.2",
     "react-transition-group": "^2.6.0",
-    "styled-system": "^4.0.0"
+    "styled-system": "^5.0.23"
   }
 }

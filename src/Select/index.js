@@ -2,7 +2,7 @@ import React from 'react'
 import ReactSelect from 'react-select'
 import ReactAsyncSelect from 'react-select/lib/Async'
 import styled, { css } from 'styled-components'
-import { themeGet as t } from 'styled-system'
+import { themeGet as t } from '@styled-system/theme-get'
 
 import { getSpace, getColor } from '../utils'
 

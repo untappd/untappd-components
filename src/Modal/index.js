@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactModal from 'react-modal'
 import styled from 'styled-components'
-import { themeGet } from 'styled-system'
+import { themeGet } from '@styled-system/theme-get'
 
 import IconButton from '../IconButton'
 import Card from '../Card'

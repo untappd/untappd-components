@@ -34,9 +34,7 @@ const theme = {
   breakpoints: ['32em', '48em', '64em'],
 
   space,
-  heights: space,
-  minHeights: space,
-  minWidths: space,
+  sizes: space,
 
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
 

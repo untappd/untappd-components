@@ -7,7 +7,6 @@ const Heading = styled(BaseHeading)`
 `
 
 Heading.defaultProps = {
-  m: 0,
   fontSize: 4,
   fontWeight: 1,
 }
