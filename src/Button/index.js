@@ -12,6 +12,7 @@ const blue = css`
   &:hover {
     background-color: ${getColor('darkBlue')};
     border-color: ${getColor('darkBlue')};
+    color: ${getColor('white')};
   }
 `
 
@@ -22,6 +23,7 @@ const red = css`
   &:hover {
     border-color: ${getColor('darkRed')};
     background-color: ${getColor('darkRed')};
+    color: ${getColor('white')};
   }
 `
 
@@ -32,6 +34,7 @@ const green = css`
   &:hover {
     background-color: ${getColor('darkGreen')};
     border-color: ${getColor('darkGreen')};
+    color: ${getColor('white')};
   }
 `
 
