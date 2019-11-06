@@ -23,7 +23,7 @@ Header.defaultProps = {
   justifyContent: 'space-between',
   alignItems: 'center',
   px: 5,
-  minHeight: 11,
+  minHeight: 'large',
 }
 
 const Content = styled(BaseBox)``

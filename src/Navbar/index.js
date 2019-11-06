@@ -55,7 +55,7 @@ Navbar.NavItem = styled(NavItemBase)`
     padding-left: ${getSpace(3)};
     padding-right: ${getSpace(3)};
     height: ${getHeight(NAVBAR_HEIGHT)};
-    color: ${getColor('grays.4')};
+    color: 'grays.4';
     display: flex;
     align-items: center;
 
