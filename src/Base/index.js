@@ -7,8 +7,6 @@ import {
   space,
   color,
   typography,
-  shadows,
-  radii,
 } from 'styled-system'
 import css from '@styled-system/css'
 
@@ -22,7 +20,6 @@ const styleProps = compose(
   space,
   typography,
   zIndex,
-  radii,
 )
 
 const Base = styled.div(
@@ -36,7 +33,7 @@ const Base = styled.div(
   styleProps,
 )
 
-const BaseBox = styled(Base)(flexbox, shadows)
+const BaseBox = styled(Base)(flexbox)
 
 const BaseButton = styled(Base).attrs({
   as: 'button',
