@@ -9,7 +9,8 @@ const blue = css`
   background-color: ${getColor('blue')};
   border-color: ${getColor('blue')};
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: ${getColor('darkBlue')};
     border-color: ${getColor('darkBlue')};
     color: ${getColor('white')};
@@ -20,7 +21,8 @@ const red = css`
   background-color: ${getColor('red')};
   border-color: ${getColor('red')};
 
-  &:hover {
+  &:hover,
+  &:focus {
     border-color: ${getColor('darkRed')};
     background-color: ${getColor('darkRed')};
     color: ${getColor('white')};
@@ -31,7 +33,8 @@ const green = css`
   background-color: ${getColor('green')};
   border-color: ${getColor('green')};
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: ${getColor('darkGreen')};
     border-color: ${getColor('darkGreen')};
     color: ${getColor('white')};
@@ -43,7 +46,8 @@ const white = css`
   background-color: ${getColor('white')};
   border-color: ${getColor('grays.2')};
 
-  &:hover {
+  &:hover,
+  &:focus {
     border-color: ${getColor('grays.2')};
     background-color: ${getColor('grays.0')};
   }
@@ -55,7 +59,7 @@ const clear = css`
   border-color: transparent;
 
   &:hover,
-  &:active {
+  &:focus &:active {
     color: ${getColor('darkBlue')};
     border-color: transparent;
     background-color: transparent;
