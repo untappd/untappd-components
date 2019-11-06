@@ -1,49 +1,50 @@
 import React from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
+import { variant } from 'styled-system'
+import css from '@styled-system/css'
 import { themeGet } from '@styled-system/theme-get'
 
 import { BaseBox } from '../Base'
 import { Flex } from '../Grid'
 import Icons from '../Icons'
 import ListItem from '../ListItem'
-import { getSpace, getColor } from '../utils'
 
-const colorVariants = ({ color, theme: { colors } }) =>
-  ({
+const colorVariants = variant({
+  variants: {
     red: {
-      borderLeftColor: colors.red,
+      borderLeftColor: 'red',
     },
-
     brand: {
-      borderLeftColor: colors.brand,
+      borderLeftColor: 'brand',
     },
 
     blue: {
-      borderLeftColor: colors.blue,
+      borderLeftColor: 'blue',
     },
 
     green: {
-      borderLeftColor: colors.green,
+      borderLeftColor: 'green',
     },
-  }[color])
+  },
+})
 
-const listItemSpacing = css`
-  ${ListItem.Heading} + ${ListItem.Info} {
-    padding-top: ${getSpace(1)};
-  }
-`
+const listItemSpacing = css({
+  'ListItem.Heading + ListItem.Info': {
+    paddingTop: 'xSmall',
+  },
+})
 
-const StyledAlert = styled(BaseBox)`
-  color: ${getColor('black')};
-  background-color: ${getColor('white')};
-  border-left-width: 3px;
-  pointer-events: all;
-  ${colorVariants};
-  ${listItemSpacing};
-
-  &:hover {
-  }
-`
+const StyledAlert = styled(BaseBox)(
+  css({
+    color: 'black',
+    backgroundColor: 'white',
+    borderLeftWidth: '3px',
+    pointerEvents: 'all',
+    listItemSpacing,
+    '&:hover': {},
+  }),
+  colorVariants,
+)
 
 StyledAlert.defaultProps = {
   mb: 1,
@@ -56,24 +57,24 @@ StyledAlert.defaultProps = {
   boxShadow: 1,
 }
 
-const AlertButton = styled.div`
-  white-space: nowrap;
-  appearance: none;
-  max-width: 100%;
-  vertical-align: middle;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: ${getSpace(5)};
-  height: ${getSpace(5)};
-  border-radius: ${themeGet('radii.0')}px;
-
-  &:hover {
-    background-color: ${getColor('grays.0')};
-  }
-`
+const AlertButton = styled.div(
+  css({
+    whiteSpace: 'nowrap',
+    appearance: 'none',
+    maxWidth: '100%',
+    verticalAlign: 'middle',
+    cursor: 'pointer',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 'medium',
+    height: 'medium',
+    borderRadius: 0,
+    '&:hover': {
+      backgroundColor: 'grays.0',
+    },
+  }),
+)
 
 const Title = styled.div``
 
@@ -108,7 +109,7 @@ export default function Alert({
   const closeIconPadding = onRemove ? '0' : '24px'
 
   return (
-    <StyledAlert color={color} {...props}>
+    <StyledAlert variant={color} {...props}>
       <Wrapper>
         {hasIcon && (
           <IconContainer py={4} pl={5} ml={-2}>
