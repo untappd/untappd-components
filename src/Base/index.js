@@ -1,78 +1,42 @@
 import styled from 'styled-components'
 import {
   compose,
-  flexDirection,
-  display,
-  flex,
-  alignItems,
-  flexWrap,
-  borderColor,
-  borders,
+  flexbox,
+  layout,
+  border,
   space,
   color,
-  lineHeight,
-  borderRadius,
-  justifyItems,
-  justifyContent,
-  order,
-  flexBasis,
-  alignSelf,
-  justifySelf,
-  fontSize,
-  fontWeight,
-  width,
-  minWidth,
-  height,
-  minHeight,
-  boxShadow,
+  typography,
+  shadows,
+  radii,
 } from 'styled-system'
-import { themeGet } from '@styled-system/theme-get'
+import css from '@styled-system/css'
 
 import zIndex from '../zIndex'
-import { getColor } from '../utils'
 
 const styleProps = compose(
   color,
-  fontSize,
-  fontWeight,
-  lineHeight,
+  flexbox,
+  layout,
+  border,
   space,
-  borders,
-  borderColor,
-  borderRadius,
-  display,
-  width,
-  minWidth,
-  height,
-  minHeight,
+  typography,
   zIndex,
+  radii,
 )
 
 const Base = styled.div(
-  props => ({
-    color: getColor('black')(props),
-    fontFamily: themeGet('fonts.default')(props),
+  css({
+    color: 'black',
+    fontFamily: 'default',
     boxSizing: 'border-box',
     margin: 0,
     padding: 0,
   }),
   styleProps,
-  props => props.css,
 )
 
-const BaseBox = styled(Base)(
-  flex,
-  flexDirection,
-  justifyContent,
-  justifyItems,
-  alignItems,
-  flexBasis,
-  order,
-  flexWrap,
-  boxShadow,
-  alignSelf,
-  justifySelf,
-)
+const BaseBox = styled(Base)(flexbox, shadows)
 
 const BaseButton = styled(Base).attrs({
   as: 'button',

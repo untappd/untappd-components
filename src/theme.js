@@ -24,6 +24,8 @@ const lightYellow = '#ffcf3d08'
 
 const space = [0, 4, 8, 12, 16, 24, 32, 40, 48, 64, 72, 76, 80]
 
+const sizes = { xSmall: 4, small: 12, medium: 24, large: 76, xLarge: 80 }
+
 const theme = {
   borderRadius: '3px',
 
@@ -34,7 +36,7 @@ const theme = {
   breakpoints: ['32em', '48em', '64em'],
 
   space,
-  sizes: space,
+  sizes,
 
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
 

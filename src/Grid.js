@@ -3,22 +3,12 @@ import styled from 'styled-components'
 import {
   space,
   color,
-  width,
-  height,
-  fontSize,
-  fontWeight,
-  flexWrap,
-  flexDirection,
-  alignItems,
-  justifyContent,
-  flex,
-  order,
-  alignSelf,
-  borders,
-  borderColor,
-  size,
-  borderRadius,
+  layout,
+  typography,
+  flexbox,
+  border,
 } from 'styled-system'
+import propTypes from '@styled-system/prop-types'
 
 import Base from './Base'
 
@@ -27,47 +17,34 @@ export const Box = styled(Base)(
     boxSizing: 'border-box',
   },
   space,
-  size,
+  layout,
   color,
-  width,
-  height,
-  fontSize,
-  fontWeight,
-  flex,
-  order,
-  alignSelf,
-  borders,
-  borderColor,
-  borderRadius,
+  typography,
+  flexbox,
+  border,
   props => props.css,
 )
 
 Box.displayName = 'Box'
 
 Box.propTypes = {
-  ...space.propTypes,
-  ...color.propTypes,
-  ...width.propTypes,
-  ...fontSize.propTypes,
+  ...propTypes.space,
+  ...propTypes.color,
+  ...propTypes.layout,
+  ...propTypes.typography,
 }
 
 export const Flex = styled(Box)(
   {
     display: 'flex',
   },
-  flexWrap,
-  flexDirection,
-  alignItems,
-  justifyContent,
+  flexbox,
 )
 
 Flex.displayName = 'Flex'
 
 Flex.propTypes = {
-  ...flexWrap.propTypes,
-  ...flexDirection.propTypes,
-  ...alignItems.propTypes,
-  ...justifyContent.propTypes,
+  ...propTypes.flexbox,
 }
 
 export const Row = styled(Flex)``
