@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { variant } from 'styled-system'
 import css from '@styled-system/css'
-import { themeGet } from '@styled-system/theme-get'
 
 import { BaseBox } from '../Base'
 import { Flex } from '../Grid'

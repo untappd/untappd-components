@@ -1,16 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
+import css from '@styled-system/css'
 
 import Card from '../Card'
-import { getColor } from '../utils'
 
 const BreadcrumbCard = styled(Card).attrs({
   mx: 8,
-})`
-  border-bottom: 1px solid ${getColor('grays.0')};
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-`
+})(
+  css({
+    borderWidth: '1px',
+    borderStyle: 'solid',
+    borderColor: 'grays.0',
+    borderBottomLeftRadius: 0,
+    borderBottomRightRadius: 0,
+  }),
+)
 
 const Content = styled(Card.Content).attrs({ p: 3 })`
   text-align: center;
