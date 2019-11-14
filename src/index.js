@@ -1,3 +1,4 @@
+import 'core-js'
 import * as utils from './utils'
 
 export { utils }

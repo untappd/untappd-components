@@ -1,5 +1,15 @@
 {
-  "presets": [["@babel/preset-react", { "modules": false }]],
+  "presets": [
+    ["@babel/preset-react", { "modules": false }],
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "entry",
+        "targets": ["> 0.25%, not dead", "ie 11"],
+        "corejs": 3
+      }
+    ]
+  ],
   "plugins": [
     "@babel/plugin-proposal-class-properties",
     "@babel/plugin-proposal-object-rest-spread",
