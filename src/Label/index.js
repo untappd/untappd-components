@@ -1,24 +1,24 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
+import css from '@styled-system/css'
 
 import Base from '../Base'
-import { getColor } from '../utils'
 
-const primary = css`
-  background-color: ${getColor('blue')};
-`
+const primary = css({
+  backgroundColor: 'blue',
+})
 
-const alert = css`
-  background-color: ${getColor('red')};
-`
+const alert = css({
+  backgroundColor: 'red',
+})
 
-const success = css`
-  background-color: ${getColor('green')};
-`
+const success = css({
+  backgroundColor: 'green',
+})
 
-const warning = css`
-  background-color: ${getColor('yellow')};
-  color: ${getColor('black')};
-`
+const warning = css({
+  backgroundColor: 'yellow',
+  color: 'black',
+})
 
 const colorTypes = ({ color }) => {
   const colors = {
@@ -31,15 +31,16 @@ const colorTypes = ({ color }) => {
   return colors[color]
 }
 
-const Label = styled(Base)`
-  color: ${getColor('white')};
-  border-radius: 10px;
-  line-height: 1.25;
-  min-width: 4rem;
-  padding: 0.15rem 0.5rem;
-
-  ${colorTypes};
-`
+const Label = styled(Base)(
+  css({
+    color: 'white',
+    borderRadius: '10px',
+    lineHeight: '1.25',
+    minWidth: '4rem',
+    padding: '0.15rem 0.5rem',
+  }),
+  colorTypes,
+)
 
 Label.defaultProps = {
   display: 'inline-block',

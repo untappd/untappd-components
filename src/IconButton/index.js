@@ -1,31 +1,33 @@
 import React from 'react'
 import styled from 'styled-components'
+import css from '@styled-system/css'
 
 import Button from '../Button'
 import Icons from '../Icons'
-import { getColor } from '../utils'
 
-const StyledButton = styled(Button)`
-  text-decoration: none;
+const StyledButton = styled(Button)(
+  css({
+    textDecoration: 'none',
 
-  border: none;
-  outline: none;
-  background: transparent;
-  padding-right: 0;
+    border: 'none',
+    outline: 'none',
+    background: 'transparent',
+    paddingRight: 0,
 
-  &:active {
-    box-shadow: none;
-  }
+    '&:active': {
+      boxShadow: 'none',
+    },
 
-  &:hover {
-    color: ${getColor('darkBlue')};
-    background: transparent;
+    '&:hover': {
+      color: 'darkBlue',
+      background: 'transparent',
 
-    svg path {
-      fill: ${getColor('grays.4')};
-    }
-  }
-`
+      'svg path': {
+        fill: 'grays.4',
+      },
+    },
+  }),
+)
 
 StyledButton.defaultProps = {
   ...Button.defaultProps,

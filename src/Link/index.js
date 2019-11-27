@@ -1,17 +1,19 @@
 import styled from 'styled-components'
+import css from '@styled-system/css'
 
 import Base from '../Base'
-import { getColor } from '../utils'
 
 const BaseLink = styled(Base).attrs({ as: 'a' })``
 
-const Link = styled(BaseLink)`
-  text-decoration: none;
+const Link = styled(BaseLink)(
+  css({
+    textDecoration: 'none',
 
-  &:hover {
-    color: ${getColor('darkBlue')};
-  }
-`
+    '&:hover': {
+      color: 'darkBlue',
+    },
+  }),
+)
 
 Link.defaultProps = {
   fontWeight: 1,
