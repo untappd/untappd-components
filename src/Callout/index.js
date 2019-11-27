@@ -1,30 +1,35 @@
 import styled from 'styled-components'
+import { variant } from 'styled-system'
+import css from '@styled-system/css'
 
 import { BaseBox } from '../Base'
-import { getColor } from '../utils'
 
-const colorVariants = ({ color, theme: { colors } }) =>
-  ({
+const colorVariants = variant({
+  prop: 'color',
+  variants: {
     red: {
-      borderColor: colors.red,
-      backgroundColor: colors.lightRed,
+      borderColor: 'red',
+      backgroundColor: 'lightRed',
     },
 
     yellow: {
-      borderColor: colors.yellow,
-      backgroundColor: colors.lightYellow,
+      borderColor: 'yellow',
+      backgroundColor: 'lightYellow',
     },
 
     green: {
-      borderColor: colors.green,
-      backgroundColor: colors.lightGreen,
+      borderColor: 'green',
+      backgroundColor: 'lightGreen',
     },
-  }[color])
+  },
+})
 
-const Callout = styled(BaseBox)`
-  color: ${getColor('black')};
-  ${colorVariants};
-`
+const Callout = styled(BaseBox)(
+  css({
+    color: 'black',
+  }),
+  colorVariants,
+)
 
 Callout.defaultProps = {
   mb: 5,
