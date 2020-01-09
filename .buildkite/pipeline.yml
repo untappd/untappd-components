@@ -5,7 +5,7 @@ steps:
       queue: "dev-docker"
     plugins:
       - docker-compose#302da0f02457ec475ee0d744714af91f129123f4:
-          run: cypress
+          run: lint
           env:
             - NODE_ENV=test
             - CI
