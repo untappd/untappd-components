@@ -1,8 +1,21 @@
 steps:
   - name: ':eslint:'
     command: 'yarn lint'
-
-  - wait
+    agents:
+      queue: "dev-docker"
+    plugins:
+      - docker-compose#2141dff887c47eaae9ec10f456e93add71254704:
+          run: lint
+          network: "test-lint"
 
   - name: ':cypress:'
     command: 'yarn test:cypress'
+    agents:
+      queue: "dev-docker"
+    plugins:
+      - docker-compose#2141dff887c47eaae9ec10f456e93add71254704:
+          run: cypress
+          volumes:
+            - "./cypress/videos:/app/cypress/videos"
+            - "./cypress/screenshots:/app/cypress/screenshots"
+          network: "test-cypress"

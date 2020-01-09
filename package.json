@@ -8,7 +8,6 @@
     "start": "NODE_ENV=development webpack-dev-server --mode development",
     "build": "rm -r ./dist || true && NODE_ENV=production rollup -c --environment production",
     "build:docs": "webpack --config=webpack.config.production.js --mode production",
-    "prepublish": "yarn build",
     "lint": "yarn lint:css && yarn lint:js",
     "lint:css": "stylelint './src/**/*.js'",
     "lint:js": "eslint ./src/**/",
