@@ -1,0 +1,17 @@
+version: '3'
+services:
+  cypress:
+    build:
+      context: .
+      dockerfile: cypress.Dockerfile
+    command: yarn test:cypress
+    environment:
+      CI: "true"
+  lint:
+    build:
+      context: .
+    command: "yarn lint"
+    environment:
+      CI: "true"
+
+
