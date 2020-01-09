@@ -4,28 +4,18 @@ steps:
     agents:
       queue: "dev-docker"
     plugins:
-      - docker-compose#302da0f02457ec475ee0d744714af91f129123f4:
+      - docker-compose#2141dff887c47eaae9ec10f456e93add71254704:
           run: lint
-          env:
-            - NODE_ENV=test
-            - CI=true
-          no-cache: true
           network: "test-lint"
-          upload-container-logs: always
 
   - name: ':cypress:'
     command: 'yarn test:cypress'
     agents:
       queue: "dev-docker"
     plugins:
-      - docker-compose#302da0f02457ec475ee0d744714af91f129123f4:
+      - docker-compose#2141dff887c47eaae9ec10f456e93add71254704:
           run: cypress
-          env:
-            - NODE_ENV=test
-            - CI=true
           volumes:
             - "./cypress/videos:/app/cypress/videos"
             - "./cypress/screenshots:/app/cypress/screenshots"
-          no-cache: true
           network: "test-cypress"
-          upload-container-logs: always
