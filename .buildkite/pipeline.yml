@@ -8,7 +8,7 @@ steps:
           run: lint
           env:
             - NODE_ENV=test
-            - CI
+            - CI=true
           no-cache: true
           network: "test-lint"
           upload-container-logs: always
@@ -22,7 +22,7 @@ steps:
           run: cypress
           env:
             - NODE_ENV=test
-            - CI
+            - CI=true
           volumes:
             - "./cypress/videos:/app/cypress/videos"
             - "./cypress/screenshots:/app/cypress/screenshots"
