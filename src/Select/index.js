@@ -16,6 +16,10 @@ const sharedStyle = css`
     border-color: ${t('colors.grays.2')};
   }
 
+  .ut-select__menu {
+    z-index: 20;
+  }
+
   .ut-select__control--is-focused {
     border-color: ${getColor('grays.3')};
     box-shadow: none;
