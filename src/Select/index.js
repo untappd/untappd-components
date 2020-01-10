@@ -17,7 +17,7 @@ const sharedStyle = css`
   }
 
   .ut-select__menu {
-    z-index: 20;
+    z-index: 10000000;
   }
 
   .ut-select__control--is-focused {

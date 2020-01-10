@@ -39,7 +39,7 @@ export const StyledModal = styled(ReactModalAdapter)`
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.6);
-    z-index: 40;
+    z-index: 100000000;
   }
 
   &__content ${Card} {
