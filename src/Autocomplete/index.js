@@ -43,6 +43,7 @@ function Autocomplete({
   renderItem,
   infoRender,
   theme,
+  onBlur,
   ...props
 }) {
   return (
@@ -62,6 +63,7 @@ function Autocomplete({
           <SearchInput
             {...getInputProps({
               placeholder,
+              onBlur,
             })}
           />
 
