@@ -1,6 +1,6 @@
 const white = '#fff'
 const black = '#212121'
-const blue = '#1e91ea'
+const blue = '#186ed8'
 const green = '#6dbc4a'
 const yellow = '#ffcf3d'
 const red = '#e25858'
