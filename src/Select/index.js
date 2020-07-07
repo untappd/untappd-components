@@ -34,7 +34,6 @@ const sharedStyle = css`
     border-color: ${getColor('grays.3')};
     opacity: 0.25;
   }
-  }
 
   .ut-select__single-value {
     color: ${t('colors.black')};
