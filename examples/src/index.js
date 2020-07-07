@@ -135,6 +135,7 @@ class Examples extends Component {
     items: ITEMS,
     asyncInputValue: '',
     selectedOption: null,
+    selectedOptionDisabled: options[1],
     isToggle1Checked: false,
     isToggle2Checked: true,
   }
@@ -146,6 +147,7 @@ class Examples extends Component {
       isFixedWidthModalOpen,
       isLoading,
       selectedOption,
+      selectedOptionDisabled,
       asyncInputValue,
       isToggle1Checked,
       isToggle2Checked,
@@ -367,6 +369,15 @@ class Examples extends Component {
                 selectedOption: value,
               })
             }}
+          />
+          <br />
+
+          <FormLabel htmlFor="select-box">Select Box (disabled)</FormLabel>
+          <Select
+            id="select-box"
+            value={selectedOptionDisabled}
+            options={options}
+            isDisabled
           />
 
           <Text mt={1}>

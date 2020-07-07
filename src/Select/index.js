@@ -29,6 +29,13 @@ const sharedStyle = css`
     }
   }
 
+  .ut-select__control--is-disabled {
+    background-color: ${getColor('grays.2')};
+    border-color: ${getColor('grays.3')};
+    opacity: 0.25;
+  }
+  }
+
   .ut-select__single-value {
     color: ${t('colors.black')};
   }
